@@ -8,8 +8,157 @@
         <link rel="stylesheet" href="styles/normalize.css">
         <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
         <link rel="stylesheet" href="styles/main.css">
+		<script type = "text/javascript">
+
+		function fiveTable () {
+		var printValue = "";
+        var inputNumber = parseInt(document.getElementById("userInput").value);
+		var outputSum = 0;
+            
+        if (inputNumber <= 0) {
+            printValue = "Please enter a number greater than 0";
+        }   
+        else {
+            for (var i = 1; i <= inputNumber; i++) {
+                outputSum = i * 5;
+                printValue += "5 x " + i + " = " + outputSum + "<br>";	
+            }
+        }
+		
+		//Output entire five times table
+		document.getElementById("outputDiv").innerHTML = printValue;		
+	   }
+            
+        // Function to clear all fields
+        function clearFields() {
+            location.reload();
+        }
+        function testCode() {
+	   //Prompt user for array length
+        var textArrayMax = parseInt(prompt("How many numbers will you enter?"));
+        //Determine if user input is an integer
+        if (isNaN(textArrayMax)) {
+            //Output error message if not an integer
+            document.getElementById("arrayOutput").innerHTML = "Error with your input. Please try again"
+        } else {
+             //Call function to create Array
+            var list = createArray(textArrayMax);
+        }
+        // Call function to sort array values
+        var sortArray = sort(list);
+        //Call function to calculate sum of first/last integer
+        var sumValue = addEnds(list);
+        //Call function to determine middle integer of array
+        var midValue = getMiddle(list);
+        //Output all values of the array
+        document.getElementById("arrayOutput").innerHTML = "Array of values: " + "[" + list + "]";
+        //Output the sum of first/last integer
+        document.getElementById("sumOutput").innerHTML = "Sum of your First & Last values is: " + sumValue;
+        //Output the middle integer
+        document.getElementById("middleOutput").innerHTML = "Your middle integer is: " + midValue;
+        }
+        /* Defining Table
+        Input: Receive array of values
+        Processing: Determine first and last integer. Calculate sum between both values
+        Output: return sum of first and last integer.
+        */
+        function addEnds(list) {
+            //Set first value variable to first item in the array
+            var firstValue = list[0];
+            //Set last value variable to the last item in the array
+            var lastValue = list[list.length - 1];
+            //Calculate sum of first and last integer
+            var calcSum = firstValue + lastValue;
+            return calcSum;
+        }
+
+        /* Defining Table
+        Input: Receive array of values
+        Processing: Determine first and last array index value. If total array index values is even, calculate average of middle integers. Otherwise, calculate middle index value
+        Output: return middle integer value.
+        */
+        function getMiddle(list) {
+            //Set first array index value
+            var firstValue = 0;
+            //Set last array index value
+            var arrayLength = list.length;
+            //Calculate middle index value
+            var arrayMid = arrayLength / 2
+            //If total number of array values is an even number
+            if (arrayLength % 2 == 0) {
+                //Set first middle number
+                var avgFirstValue = list[arrayMid - 1];
+                //Set second middle number
+                var avgLastValue = list[arrayMid];
+                //Calculate average middle number
+                var calcAvgValue = (avgFirstValue + avgLastValue) / 2
+                return calcAvgValue;
+            }
+            else {
+                //Round mid value to a whole number
+                var calcMidValue = list[Math.floor(arrayMid)];
+                return calcMidValue;
+            }
+        }
+
+        // Function to sort integers
+        function sort(list) {
+            var firstValue = 0;
+            var lastValue = list.length - 1;
+            for (var i = lastValue - 1;  i >= firstValue;  i--) {
+                var swap = list[i];
+                for (var j = i + 1;  j <= lastValue;  j++) {
+                    if (swap <= list[j]) {
+                        break;
+                    }
+                    list[j - 1] = list[j];
+                }
+                list[j - 1] = swap;
+            }
+        }
+
+        // Function to create an array
+        function createArray (textArrayMax) {
+            //Define interval variable
+            var i = 0;
+            //Define place holder array
+            var list = [];
+            //Do while loop to capture integer values from user	
+            do {
+                //Prompt user for integers for array
+                var textInputArray = parseFloat(prompt("Enter Integer Value"));
+                //Determine input value is an integer, break out of loop if invalid input 
+                if (isNaN(textInputArray)) {
+                    break;
+                } else {
+                    //add integer into array
+                    list.push(textInputArray);
+                    i++;
+                }
+            }
+                    //Loop through until array length is reached
+            while (i < textArrayMax);
+            return list;
+        }
+		</script>
     </head>
-    <body>
-        <h2>Coming Soon</h2>
-    </body>
+	<body>
+		<h1>Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays</h1>
+        <h2>Loops / Conditional Statements / Functions / Variables</h2>
+		<p>Enter how many times to run the Five Times table and then click Print</p>
+        <input type="number" id="userInput"><br>
+		<button type="button" onclick="fiveTable()">Print</button>
+		<p></p>
+		<div id = "outputDiv"></div>
+        
+        <h2>Arrays / Associative Arrays</h2>
+        <p>Click on the "Test Code" button to start the program. First enter the number of integers for your array. Then enter each integer.</p>
+        <button type = "button" onclick = "testCode()">Test Code</button>
+        <p></p>
+        <div id = "arrayOutput"></div>
+        <div id = "sumOutput"></div>
+        <div id = "middleOutput"></div>
+        <p>&nbsp;</p><p>&nbsp;</p>
+        <button type = "button" onclick = "clearFields()">Reset</button>
+	</body>
 </html>
