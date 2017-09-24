@@ -57,11 +57,7 @@
         //Output the middle integer
         document.getElementById("middleOutput").innerHTML = "Your middle integer is: " + midValue;
         }
-        /* Defining Table
-        Input: Receive array of values
-        Processing: Determine first and last integer. Calculate sum between both values
-        Output: return sum of first and last integer.
-        */
+
         function addEnds(list) {
             //Set first value variable to first item in the array
             var firstValue = list[0];
@@ -72,11 +68,6 @@
             return calcSum;
         }
 
-        /* Defining Table
-        Input: Receive array of values
-        Processing: Determine first and last array index value. If total array index values is even, calculate average of middle integers. Otherwise, calculate middle index value
-        Output: return middle integer value.
-        */
         function getMiddle(list) {
             //Set first array index value
             var firstValue = 0;
@@ -136,7 +127,7 @@
                     i++;
                 }
             }
-                    //Loop through until array length is reached
+            //Loop through until array length is reached
             while (i < textArrayMax);
             return list;
         }
