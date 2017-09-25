@@ -17,7 +17,10 @@
             
         if (inputNumber <= 0) {
             printValue = "Please enter a number greater than 0";
-        }   
+        }
+        else if (inputNumber >= 100) {
+            printValue = "Please enter a number smaller than 100";
+        }
         else {
             for (var i = 1; i <= inputNumber; i++) {
                 outputSum = i * 5;
