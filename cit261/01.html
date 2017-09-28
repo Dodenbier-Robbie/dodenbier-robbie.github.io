@@ -36,6 +36,9 @@
         function clearFields() {
             location.reload();
         }
+            
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////            
+            
         function testCode() {
 	   //Prompt user for array length
         var textArrayMax = parseInt(prompt("How many numbers will you enter?"));
@@ -134,6 +137,20 @@
             while (i < textArrayMax);
             return list;
         }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            
+        function favoriteSelections() {
+            
+            var favoriteCity = document.getElementById("favoriteCity").value;
+            var favoriteColor = document.getElementById("favoriteColor").value;
+            var favoriteNumber = document.getElementById("favoriteNumber").value;
+            
+            var associativeArray = {"city": favoriteCity, "color": favoriteColor, "number": favoriteNumber};
+            
+            document.getElementById("associativeArray").innerHTML = "<br>Your array looks like this: <br>{color: " + associativeArray["color"] 
+                +", number: " + associativeArray["number"] + ", city: " + associativeArray["city"] + "}";
+        }
 		</script>
     </head>
 	<body>
@@ -145,13 +162,30 @@
 		<p></p>
 		<div id = "outputDiv"></div>
         <hr \>
-        <h2>Arrays / Associative Arrays</h2>
+        <h2>Parameters / Arrays</h2>
         <p>Click on the "Test Code" button to start the program. First enter the number of integers for your array. Then enter each integer.</p>
         <button type = "button" onclick = "testCode()">Test Code</button>
         <p></p>
         <div id = "arrayOutput"></div>
         <div id = "sumOutput"></div>
         <div id = "middleOutput"></div>
+        <hr \>
+        <h2>Associative Arrays</h2>
+        <p>Please enter in your favorite values and click on the Submit button</p>
+        <table>
+            <tr>
+                <td>Favorite Color:</td><td><input type="text" id="favoriteColor"></td>
+            </tr> 
+            <tr>
+                <td>Favorite Number:</td><td><input type="text" id="favoriteNumber"></td>
+            </tr>
+            <tr>
+                <td>Favorite City:</td><td><input type="text" id="favoriteCity"></td>
+            </tr>
+        </table>
+        <br>
+        <button type="button" onclick="favoriteSelections()">Submit</button>
+        <div id = "associativeArray"></div>
         <p>&nbsp;</p><p>&nbsp;</p>
         <button type = "button" onclick = "clearFields()">Reset</button>&nbsp;<button type="button" onclick="window.location.href='index.html'">Home</button>
 	</body>
