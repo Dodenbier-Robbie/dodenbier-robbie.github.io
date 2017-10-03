@@ -32,5 +32,5 @@ function populatePerson () {
 
 function setUser() {
     var user = JSON.parse(localStorage.getItem('user'));
-    document.getElementById("userOutput").innerHTML = "<b>First Name:</b> " + user.firstName + "<br><b>Last Name:</b> " + user.lastName + "<br><b>Email:</b> " + user.email + "<br><b>Phone: " + user.phone;
+    document.getElementById("userOutput").innerHTML = "<b>First Name:</b> " + user.firstName + "<br><b>Last Name:</b> " + user.lastName + "<br><b>Email:</b> " + user.email + "<br><b>Phone:</b> " + user.phone;
 }
