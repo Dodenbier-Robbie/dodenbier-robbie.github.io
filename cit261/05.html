@@ -16,5 +16,19 @@
         <button type="button" onClick="clickCounter()">Click Me!</button>&nbsp;<button type="button" onClick="clearItems()">Reset</button>
         <p>&nbsp;</p>
         <div id="result"></div>  
+        <hr \>
+        <p>Enter in your personal information to see it stored locally on the page. Try refreshing your screen and click "Show" to see your information magically reappear!</p>
+        <form id="form" action="#" method="post">
+            <fieldset>
+                <legend>Personal Info</legend>
+                <label><span>First Name:</span><input id="firstName" type="text"></label>
+                <label><span>Last Name:</span><input id="lastName" type="text"></label>
+                <label><span>Email:</span><input id="email" type="text"></label>
+                <label><span>Phone:</span><input id="phone" type="text"></label>
+            </fieldset>
+        </form>
+        <button type="button" onClick="populatePerson()">Submit</button>&nbsp;<button type="button" onClick="setUser()">Show</button>&nbsp;<button type="button" onClick="clearItems()">Reset</button>
+        <p>&nbsp;</p>
+        <div id="userOutput"></div>
     </body>
 </html>

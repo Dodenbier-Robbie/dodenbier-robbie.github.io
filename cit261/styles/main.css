@@ -76,3 +76,11 @@ label span {
     padding-top: .5em;
     padding-bottom: .2em;
 }
+
+#userOutput {
+    border-width = 1px;
+    border-style: solid;
+    border-color: black;
+    background-color: lightgrey;
+    
+}
