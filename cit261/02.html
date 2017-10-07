@@ -8,8 +8,62 @@
         <link rel="stylesheet" href="styles/normalize.css">
         <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
         <link rel="stylesheet" href="styles/main.css">
+        <script type="text/javascript">
+            
+            // Creating an object literal
+            var person = {
+                firstName: "Robbie",
+                lastName: "Dodenbier",
+                age: 39,
+                eyeColor: "Blue",
+                hairColor: "Bald",
+                city: "Herriman",
+                state: "Utah",
+                country: "USA",
+                zip: 84096,
+                fullName: function() {
+                return this.firstName + " " + this.lastName;
+                },
+                contactInfo: function() {
+                return this.city + ", " + this.state + " " + this.zip + " " + this.country;
+                }
+            };
+            
+            // Access object properties
+            console.log("First Name: " + person.firstName);
+            console.log("Last Name: " + person.lastName);
+            console.log("Age: " + person["age"]);
+
+            //Access Object Method Properties
+            console.log("Full Name: " + person.fullName());
+            console.log("Contact Info: " + person.contactInfo());
+            
+             // Create object using constructor
+            function People (first, last, name) {
+                this.firstName = first;
+                this.lastName = last;
+                this.fullName = first + " " + last;
+            }
+            
+            var myFather = new People("Robert", "Dodenber");
+            var myMother = new People("Wendy", "Dodenbier");
+            
+            //Access new Objects
+            console.log("Father's Name: " + myFather.fullName);
+            console.log("Mother's Name: " + myMother.fullName);
+            
+            //Add additional properities to object
+            
+            myFather.age = 65;
+            myMother.age = 60;
+            
+            console.log("Father's Age: " + myFather.age);
+            console.log("Mother's Age: " + myMother.age);
+            
+        </script>
     </head>
     <body>
-        <h2>Coming Soon</h2>
+        <h2>Object Creation Functions, Inheritance, Properties, Methods, Instantiation</h2>
+        <p>Please "Inspect Element" and review the code and console to see the magic happen!</p>
     </body>
 </html>
