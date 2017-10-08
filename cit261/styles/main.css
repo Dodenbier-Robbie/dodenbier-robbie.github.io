@@ -87,3 +87,7 @@ label span {
     width: 800px;
     
 }
+
+pre {
+    font-size: .75rem;
+}
