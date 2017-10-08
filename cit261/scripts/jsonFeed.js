@@ -4,7 +4,9 @@ function testJSON() {
     xhr.onreadystatechange = function() {
       if (xhr.readyState == 4) {
           var response = JSON.parse(xhr.responseText);
-        document.getElementById("jsonOutput").innerText = response[0].id;
+            for(var i = 0; i < reponse.length; i++) {
+              document.getElementById("jsonOutput").innerText = response[i].id;   
+            }
       }
     }
 xhr.send();   
