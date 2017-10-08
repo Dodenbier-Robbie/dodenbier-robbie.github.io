@@ -13,7 +13,7 @@ function testJSON() {
           
           var jsonString = JSON.stringify(response, null, 4);
           
-          document.getElementById("jsonStringOutput").innerHTML = "<hr \><p><b>JSON converted to a string</b></p>" + jsonString;
+          document.getElementById("jsonStringOutput").innerHTML = "<hr \><p><b>JSON converted to a string</b></p><pre>" + jsonString + "</pre>";
       }
     }
 xhr.send();   
