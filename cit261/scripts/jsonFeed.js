@@ -5,7 +5,7 @@ function testJSON() {
       if (xhr.readyState == 4) {
           var response = JSON.parse(xhr.responseText);
             for(var i = 0; i < response.length; i++) {
-              document.getElementById("jsonOutput").innerText = "ID: " + response[i].id + "<br>";   
+              var jsonID += response[i].id;   
             }
       }
     }
