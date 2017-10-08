@@ -11,7 +11,7 @@ function testJSON() {
             }
           document.getElementById("jsonOutput").innerHTML = jsonDisplay;
           
-          var jsonString = JSON.stringify(xhr.responseText);
+          var jsonString = JSON.stringify(xhr.responseText, null, 4);
           
           document.getElementById("jsonStringOutput").innerHTML = "<p><b>JSON converted to a string</b></p>" + jsonString;
       }
