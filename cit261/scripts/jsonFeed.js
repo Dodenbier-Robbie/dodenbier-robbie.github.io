@@ -7,7 +7,7 @@ function testJSON() {
           var jsonDisplay = "";
           
           for(var i = 0; i < response.length; i++) {
-              jsonDisplay += "<p>" + response[i].id + "<br>" + response[i].first_name + "<br>" + response[i].last_name + "<br>" + response[i].email + "<br>" + response[i].gender + "<br>" + response[i].ip_address + "</p>";
+              jsonDisplay += "<p>ID: " + response[i].id + "<br>First Name: " + response[i].first_name + "<br>Last Name: " + response[i].last_name + "<br>Email: " + response[i].email + "<br>Gender: " + response[i].gender + "<br>IP Address: " + response[i].ip_address + "</p>";
             }
           document.getElementById("jsonOutput").innerHTML = jsonDisplay;
       }
