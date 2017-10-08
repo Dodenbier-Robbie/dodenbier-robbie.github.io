@@ -5,7 +5,7 @@ function testJSON() {
       if (xhr.readyState == 4) {
           var response = JSON.parse(xhr.responseText);
             for(var i = 0; i < response.length; i++) {
-              var jsonID += response[i].id;   
+              var jsonID =+ response[i].id;   
             }
       }
     }
