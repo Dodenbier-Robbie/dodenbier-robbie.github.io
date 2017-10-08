@@ -10,6 +10,10 @@ function testJSON() {
               jsonDisplay += "<p>ID: " + response[i].id + "<br>First Name: " + response[i].first_name + "<br>Last Name: " + response[i].last_name + "<br>Email: " + response[i].email + "<br>Gender: " + response[i].gender + "<br>IP Address: " + response[i].ip_address + "</p>";
             }
           document.getElementById("jsonOutput").innerHTML = jsonDisplay;
+          
+          var jsonString = JSON.stringify(xhr.responseText);
+          
+          document.getElementById("jsonStringOutput").innerHTML = jsonString;
       }
     }
 xhr.send();   
