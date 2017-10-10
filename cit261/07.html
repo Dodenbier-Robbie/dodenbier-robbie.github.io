@@ -9,6 +9,7 @@
         <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
         <link rel="stylesheet" href="styles/main.css">
         <link rel="stylesheet" href="styles/cssManipulation.css">
+        <script type="text/javascript" src="scripts/cssManipulation.js"></script>
     </head>
     <body>
         <h2>Manipulating CSS Class Properties Using JavaScript</h2>
@@ -30,9 +31,11 @@
             <option value="green">Green</option>
         </select>
         <button class="myButtons" type="button" onclick="changeFontColor()">Submit</button>
+        <p>To add a border radius to all buttons, click on this button: 
+            <button class="myButtons" type="button" onclick="changeButtons()">Change Buttons</button>
+        </p>
         <p>
             <button class="myButtons" type="button" onclick="clearItems()">Reset</button>&nbsp;<button class="myButtons" type="button" onclick="window.location.href='index.html'">Home</button>
         </p>
-        <script type="text/javascript" src="scripts/cssManipulation.js"></script>
     </body>
 </html>

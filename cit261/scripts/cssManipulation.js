@@ -20,3 +20,10 @@ function clearItems() {
 function adjustPercentage(percentage) {
     document.getElementById("sliderOutput").innerHTML = percentage + '%';
 }
+
+function changeButtons() {
+    var x = document.getElementsByClassName("myButtons");
+    for (var i = 0; i < x.length; i++) {
+      x[i].style.borderRadius = "6%";  
+    }
+}
