@@ -15,9 +15,21 @@
         <h2>Manipulating CSS Class Properties Using JavaScript</h2>
         <img id="myPic" src="images/pexels-photo-596934.jpeg">
         <p>
-        <button type="button" onclick="changePictureWidth()">Change Picture Width</button>
+        <button type="button" onclick="changePictureWidth()">Change Picture Size</button>
         </p>
         <div id="fontChange">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vehicula justo pretium tempus tincidunt. Aenean malesuada purus at orci interdum imperdiet. Integer enim libero, malesuada et mattis vitae, sodales et ligula. Maecenas pretium dapibus nunc, eget aliquet augue mattis sit amet. Morbi ullamcorper ante vitae erat laoreet, non laoreet quam rhoncus. Aenean ac nulla ligula. Aenean blandit, augue at suscipit luctus, ligula nibh sodales quam, sed vehicula urna lectus vel mi. Pellentesque pretium porta mi sit amet sodales.</div><br>
         <button type="button" onclick="changeFontSize()">Change Font Size</button>
+        <p>Select a value to change the font color.</p>
+        <select id="fontColor">
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="teal">Teal</option>
+            <option value="coral">Coral</option>
+            <option value="green">Green</option>
+        </select>
+        <button type="button" onclick="changeFontColor()">Submit</button>
+        <p>
+            <button type="button" onclick="clearItems()">Reset</button>
+        </p>
     </body>
 </html>
