@@ -1,3 +1,19 @@
 #myPic {
     max-width: 75%;
+    color: 
+}
+
+.myButtons {
+    padding: 8px 14px;
+    text-align: center;
+    display: inline-block;
+    font-size: 12px;
+}
+
+#slideContainer {
+    width: 100%;
+}
+
+#picWidth {
+    width: 25%;
 }

@@ -1,6 +1,6 @@
 function changePictureWidth() {
-    
-    document.getElementById("myPic").style.width = "40%"; 
+    var picWidth = document.getElementById("picWidth").value;
+    document.getElementById("myPic").style.width = picWidth + '%'; 
 }
 
 function changeFontSize() {
@@ -15,4 +15,8 @@ function changeFontColor() {
 function clearItems() {
     window.localStorage.clear();
     location.reload();
+}
+
+function adjustPercentage(percentage) {
+    document.getElementById("sliderOutput").innerHTML = percentage + '%';
 }
