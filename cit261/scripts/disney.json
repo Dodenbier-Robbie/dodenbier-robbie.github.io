@@ -70,4 +70,10 @@
     "picURL": "https://www.mouseplanet.info/gallery/d/141937-1/RSR1-060912-AVP.jpg",
     "heighRestriction": "40 inches",
     "firstOpen": "June 15, 2012"
+},{
+    "ride": "Buzz Lightyear",
+    "location": ["Disneyland", "Magic Kingdom", "Tokyo Disneyland", "Hong Kong Disneyland", "Disneyland Paris", "Shanghai Disneyland Park"],
+    "picURL": "https://thrillz.co/images/Rides/buzz-lightyear-laser-blast-265/buzz-lightyear.jpg",
+    "heighRestriction": "None",
+    "firstOpen": "November 3, 1998"
 }]
