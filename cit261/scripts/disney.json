@@ -58,4 +58,10 @@
     "picURL": "https://pmcvariety.files.wordpress.com/2016/02/its-a-small-world.jpg?w=670&h=377&crop=1",
     "heighRestriction": "None",
     "firstOpen": "May 28, 1966"
+},{
+    "ride": "Soarin Around The World",
+    "location": ["Disney California Adventure", "Epcot", "Shanghai Disneyland Park", "Tokyo DisneySea"],
+    "picURL": "https://cdn.d23.com/cdn2015/wp-content/uploads/2016/06/1180-x-600-062216_soarin-easter-eggs-780x440.jpg",
+    "heighRestriction": "40 inches",
+    "firstOpen": "February 8, 2001"
 }]
