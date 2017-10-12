@@ -8,8 +8,13 @@
         <link rel="stylesheet" href="styles/normalize.css">
         <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
         <link rel="stylesheet" href="styles/main.css">
+        <script type="text/javascript" src="scripts/disney.json"></script>
+        <script type="text/javascript" src="scripts/disney.js"></script>
     </head>
     <body>
-        <h2>Coming Soon</h2>
+        <h2>AJAX requesting a JSON file</h2>
+        <p>Everyone that knows me, knows I'm a big fan of the Disneyland Parks. I'm going to list all of my favorites in a JSON file. Clicking on each button below will reveal each photo and stats about the ride.</p>
+        <button type="button" onclick="disneyJSON()">Click Me</button>
+        <div id="jsonDisplay"></div>
     </body>
 </html>

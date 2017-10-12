@@ -1,0 +1,71 @@
+[{
+    "ride": "Splash Mountain",
+    "location": ["Disneyland", "Magic Kingdom", "Tokyo Disneyland"],
+    "picURL": "https://en.wikipedia.org/wiki/File:Splash_Mountain_at_Disneyland.JPG",
+    "heighRestriction": "35 inches",
+    "firstOpen": "July 17, 1989",
+    "index": 1
+},{
+    "ride": "Pirates of the Caribbean",
+    "location": ["Disneyland", "Magic Kingdom", "Tokyo Disneyland", "Disneyland Paris", "Shanghai Disneyland"],
+    "picURL": "https://en.wikipedia.org/wiki/File:Pirates_of_the_Caribbean_Entrance.JPG",
+    "heighRestriction": "None",
+    "firstOpen": "March 18, 1967",
+    "index": 2
+},{
+    "ride": "Big Thunder Mountain Railroad",
+    "location": ["Disneyland", "Magic Kingdom", "Tokyo Disneyland", "Disneyland Paris"],
+    "picURL": "https://en.wikipedia.org/wiki/File:Big_Thunder_Mountain_Entrance_Sign_at_Magic_Kingdom.jpg",
+    "heighRestriction": "40 inches",
+    "firstOpen": "September 2, 1979",
+    "index": 3
+},{
+    "ride": "Haunted Mansion",
+    "location": ["Disneyland", "Magic Kingdom", "Tokyo Disneyland"],
+    "picURL": "https://en.wikipedia.org/wiki/File:Haunted_Mansion_Exterior.JPG",
+    "heighRestriction": "None",
+    "firstOpen": "August 9, 1969",
+    "index": 4
+},{
+    "ride": "Space Mountain",
+    "location": ["Disneyland", "Magic Kingdom", "Tokyo Disneyland", "Disneyland Paris", "Hong Kong Disneyland"],
+    "picURL": "https://en.wikipedia.org/wiki/File:Space_mountain.jpg",
+    "heighRestriction": "40 inches",
+    "firstOpen": "January 15, 1975",
+    "index": 5
+},{
+    "ride": "Star Tours",
+    "location": ["Disneyland", "Disney's Hollywood Studios", "Tokyo Disneyland", "Disneyland Paris"],
+    "picURL": "https://upload.wikimedia.org/wikipedia/commons/6/61/Star_Tours_logo.svg",
+    "heighRestriction": "None",
+    "firstOpen": "40 inches",
+    "index": 6
+},{
+    "ride": "Toy Story Midway Mania!",
+    "location": ["Disney California Adventure", "Disney's Hollywood Studios", "Tokyo DisneySea"],
+    "picURL": "https://en.wikipedia.org/wiki/File:DHS_ToyStoryMidwayMania.jpg",
+    "heighRestriction": "None",
+    "firstOpen": "May 31, 2008",
+    "index": 7
+},{
+    "ride": "Indiana Jones Adventure",
+    "location": ["Disneyland", "Tokyo DisneySea"],
+    "picURL": "https://en.wikipedia.org/wiki/File:Disneyland_Indiana_Jones_Attraction_Poster.jpg",
+    "heighRestriction": "46 inches",
+    "firstOpen": "March 4, 1995",
+    "index": 8
+},{
+    "ride": "The Twilight Zone Tower of Terror",
+    "location": ["Disney California Adventure", "Disney's Hollywood Studios", "Disneyland Paris", "Tokyo DisneySea"],
+    "picURL": "https://en.wikipedia.org/wiki/File:Disneyland_Indiana_Jones_Attraction_Poster.jpg",
+    "heighRestriction": "40 inches",
+    "firstOpen": "July 22, 1994",
+    "index": 9
+},{
+    "ride": "It's a Small World",
+    "location": ["Disneyland", "Magic Kingdom", "Tokyo Disneyland", "Disneyland Paris", "Hong Kong Disneyland"],
+    "picURL": "https://en.wikipedia.org/wiki/File:SmallWorldFront83_wb.jpg",
+    "heighRestriction": "None",
+    "firstOpen": "May 28, 1966",
+    "index": 10 
+}]
