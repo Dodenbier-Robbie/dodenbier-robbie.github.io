@@ -76,4 +76,10 @@
     "picURL": "https://thrillz.co/images/Rides/buzz-lightyear-laser-blast-265/buzz-lightyear.jpg",
     "heighRestriction": "None",
     "firstOpen": "November 3, 1998"
+},{
+    "ride": "Matterhorn Bobsleds",
+    "location": ["Disneyland"],
+    "picURL": "https://i.ytimg.com/vi/QJPnCf-WTR8/maxresdefault.jpg",
+    "heighRestriction": "42 inches",
+    "firstOpen": "June 14, 1959"
 }]
