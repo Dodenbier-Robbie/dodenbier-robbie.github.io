@@ -1,71 +1,61 @@
 [{
     "ride": "Splash Mountain",
     "location": ["Disneyland", "Magic Kingdom", "Tokyo Disneyland"],
-    "picURL": "https://en.wikipedia.org/wiki/File:Splash_Mountain_at_Disneyland.JPG",
+    "picURL": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Splash_Mountain_at_Disneyland.JPG",
     "heighRestriction": "35 inches",
-    "firstOpen": "July 17, 1989",
-    "index": 1
+    "firstOpen": "July 17, 1989"
 },{
     "ride": "Pirates of the Caribbean",
     "location": ["Disneyland", "Magic Kingdom", "Tokyo Disneyland", "Disneyland Paris", "Shanghai Disneyland"],
-    "picURL": "https://en.wikipedia.org/wiki/File:Pirates_of_the_Caribbean_Entrance.JPG",
+    "picURL": "https://i.ytimg.com/vi/Uv7APUxrebw/maxresdefault.jpg",
     "heighRestriction": "None",
-    "firstOpen": "March 18, 1967",
-    "index": 2
+    "firstOpen": "March 18, 1967"
 },{
     "ride": "Big Thunder Mountain Railroad",
     "location": ["Disneyland", "Magic Kingdom", "Tokyo Disneyland", "Disneyland Paris"],
-    "picURL": "https://en.wikipedia.org/wiki/File:Big_Thunder_Mountain_Entrance_Sign_at_Magic_Kingdom.jpg",
+    "picURL": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Big_Thunder_Mountain_Entrance_Sign_at_Magic_Kingdom.jpg",
     "heighRestriction": "40 inches",
-    "firstOpen": "September 2, 1979",
-    "index": 3
+    "firstOpen": "September 2, 1979"
 },{
     "ride": "Haunted Mansion",
     "location": ["Disneyland", "Magic Kingdom", "Tokyo Disneyland"],
-    "picURL": "https://en.wikipedia.org/wiki/File:Haunted_Mansion_Exterior.JPG",
+    "picURL": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Haunted_Mansion_Exterior.JPG",
     "heighRestriction": "None",
-    "firstOpen": "August 9, 1969",
-    "index": 4
+    "firstOpen": "August 9, 1969"
 },{
     "ride": "Space Mountain",
     "location": ["Disneyland", "Magic Kingdom", "Tokyo Disneyland", "Disneyland Paris", "Hong Kong Disneyland"],
-    "picURL": "https://en.wikipedia.org/wiki/File:Space_mountain.jpg",
+    "picURL": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Space_mountain.jpg",
     "heighRestriction": "40 inches",
-    "firstOpen": "January 15, 1975",
-    "index": 5
+    "firstOpen": "January 15, 1975"
 },{
     "ride": "Star Tours",
     "location": ["Disneyland", "Disney's Hollywood Studios", "Tokyo Disneyland", "Disneyland Paris"],
     "picURL": "https://upload.wikimedia.org/wikipedia/commons/6/61/Star_Tours_logo.svg",
     "heighRestriction": "None",
-    "firstOpen": "40 inches",
-    "index": 6
+    "firstOpen": "40 inches"
 },{
     "ride": "Toy Story Midway Mania!",
     "location": ["Disney California Adventure", "Disney's Hollywood Studios", "Tokyo DisneySea"],
-    "picURL": "https://en.wikipedia.org/wiki/File:DHS_ToyStoryMidwayMania.jpg",
+    "picURL": "https://upload.wikimedia.org/wikipedia/commons/2/2d/DHS_ToyStoryMidwayMania.jpg",
     "heighRestriction": "None",
-    "firstOpen": "May 31, 2008",
-    "index": 7
+    "firstOpen": "May 31, 2008"
 },{
     "ride": "Indiana Jones Adventure",
     "location": ["Disneyland", "Tokyo DisneySea"],
-    "picURL": "https://en.wikipedia.org/wiki/File:Disneyland_Indiana_Jones_Attraction_Poster.jpg",
+    "picURL": "https://www.mouseplanet.info/gallery/d/152190-1/12-10-12%231+-+Disneyland+Indiana+Jones+Adventure.jpg",
     "heighRestriction": "46 inches",
-    "firstOpen": "March 4, 1995",
-    "index": 8
+    "firstOpen": "March 4, 1995"
 },{
     "ride": "The Twilight Zone Tower of Terror",
     "location": ["Disney California Adventure", "Disney's Hollywood Studios", "Disneyland Paris", "Tokyo DisneySea"],
-    "picURL": "https://en.wikipedia.org/wiki/File:Disneyland_Indiana_Jones_Attraction_Poster.jpg",
+    "picURL": "https://upload.wikimedia.org/wikipedia/commons/4/48/TowerOfTerror_MGM.jpg",
     "heighRestriction": "40 inches",
-    "firstOpen": "July 22, 1994",
-    "index": 9
+    "firstOpen": "July 22, 1994"
 },{
     "ride": "It's a Small World",
     "location": ["Disneyland", "Magic Kingdom", "Tokyo Disneyland", "Disneyland Paris", "Hong Kong Disneyland"],
-    "picURL": "https://en.wikipedia.org/wiki/File:SmallWorldFront83_wb.jpg",
+    "picURL": "https://pmcvariety.files.wordpress.com/2016/02/its-a-small-world.jpg?w=670&h=377&crop=1",
     "heighRestriction": "None",
-    "firstOpen": "May 28, 1966",
-    "index": 10 
+    "firstOpen": "May 28, 1966"
 }]

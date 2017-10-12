@@ -1,14 +1,21 @@
-function disneyJSON() {
- var xhr = new XMLHttpRequest();
-    xhr.open("GET", "scripts/disney.json", true);
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState == 4) {
-          var response = JSON.parse(xhr.responseText);
+function disneyJSON(value) {
+ var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "scripts/disney.json", true);
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+          var response = JSON.parse(this.responseText);
           
-          var jsonString = JSON.stringify(response, null, 4);
+          var image = '<img src="' + response[value].picURL + '" />';
           
-          document.getElementById("jsonStringOutput").innerHTML = "<hr \><p><b>JSON converted to a string</b></p><pre>" + jsonString + "</pre>";
+          var x = ""
+          for(var i = 0; i < response[value].location.length; i++) {
+              x += "<li>" + response[value].location[i] + "</li>";
+          }
+          
+          document.getElementById("jsonHeader").innerHTML = response[value].ride;
+          document.getElementById("jsonPic").innerHTML = image;
+          document.getElementById("jsonDetails").innerHTML = "<b>Locations: </b>" + "<ul>" + x + "</ul>" + "<b>Height Restriction: </b>" + response[value].heighRestriction + "<br><b>First Opened: </b>" + response[value].firstOpen
       }
     }
-xhr.send();   
+xhttp.send();   
 }
