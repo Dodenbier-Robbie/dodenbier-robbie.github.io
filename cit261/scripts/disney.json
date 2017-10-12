@@ -82,4 +82,10 @@
     "picURL": "https://i.ytimg.com/vi/QJPnCf-WTR8/maxresdefault.jpg",
     "heighRestriction": "42 inches",
     "firstOpen": "June 14, 1959"
+},{
+    "ride": "Mad Tea Party",
+    "location": ["Disneyland", "Magic Kingdom", "Tokyo Disneyland", "Disneyland Paris", "Hong Kong Disneyland"],
+    "picURL": "https://upload.wikimedia.org/wikipedia/commons/8/80/TeacupsMadTeaParty_wb.jpg",
+    "heighRestriction": "None",
+    "firstOpen": "June 14, 1959"
 }]
