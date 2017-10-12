@@ -12,7 +12,7 @@ function disneyJSON(value) {
               x += "<li>" + response[value].location[i] + "</li>";
           }
           
-          document.getElementById("jsonHeader").innerHTML = response[value].ride;
+          document.getElementById("jsonHeader").innerHTML = (Number(value) + 1) + " - " + response[value].ride;
           document.getElementById("jsonPic").innerHTML = image;
           document.getElementById("jsonDetails").innerHTML = "<b>Locations: </b>" + "<ul>" + x + "</ul>" + "<b>Height Restriction: </b>" + response[value].heighRestriction + "<br><b>First Opened: </b>" + response[value].firstOpen
       }

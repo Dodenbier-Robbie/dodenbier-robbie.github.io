@@ -1,9 +1,11 @@
 img {
     width: 400px;
+    padding-bottom: 5px;
 }
 
 #jsonHeader {
     padding-top: 30px;
+    padding-bottom: 5px;
     font-size: 32px;
     font-weight: 700;
 }
