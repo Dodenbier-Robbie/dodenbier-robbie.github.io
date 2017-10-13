@@ -16,7 +16,7 @@ function disneyJSON(value) {
           document.getElementById("jsonPic").innerHTML = image;
           document.getElementById("jsonDetails").innerHTML = "Locations: " + "<ul>" + x + "</ul>" + "Height Restriction: " + response[value].heighRestriction + "<br>First Opened: " + response[value].firstOpen;
           
-          var jsonString = JSON.stringify(response, null, 4);
+          var jsonString = JSON.stringify(response[value], null, 4);
           document.getElementById("jsonStringOutput").innerHTML = "<hr \><p><b>JSON converted to a string</b></p><pre>" + jsonString + "</pre>";
       }
     }
