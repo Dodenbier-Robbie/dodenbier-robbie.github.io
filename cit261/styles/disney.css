@@ -39,5 +39,9 @@ img {
 }
 
 #jsonDetails {
-    padding-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+#jsonStringOutput {
+    padding-bottom: 20px;
 }
