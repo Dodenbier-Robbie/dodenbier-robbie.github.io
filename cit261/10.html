@@ -10,6 +10,40 @@
         <link rel="stylesheet" href="styles/main.css">
     </head>
     <body>
-        <h2>Coming Soon</h2>
+        <h2>HTML5 Tags - Video, Audio, and Canvas</h2>
+        <canvas id="canvas" width="400" height="200"></canvas>
+        <div class="playable-buttons">
+          <input id="edit" type="button" value="Edit" />
+          <input id="reset" type="button" value="Reset" />
+        </div>
+        <textarea id="code" class="playable-code" rows="4" cols="50">
+ctx.fillStyle = "blue";
+ctx.fillRect(10, 10, 100, 100);
+        </textarea>
+        <script>
+            var canvas = document.getElementById("canvas");
+            var ctx = canvas.getContext("2d");
+            var textarea = document.getElementById("code");
+            var reset = document.getElementById("reset");
+            var edit = document.getElementById("edit");
+            var code = textarea.value;
+
+            function drawCanvas() {
+              ctx.clearRect(0, 0, canvas.width, canvas.height);
+              eval(textarea.value);
+            }
+
+            reset.addEventListener("click", function() {
+              textarea.value = code;
+              drawCanvas();
+            });
+
+            edit.addEventListener("click", function() {
+              textarea.focus();
+            })
+
+            textarea.addEventListener("input", drawCanvas);
+            window.addEventListener("load", drawCanvas);
+        </script>
     </body>
 </html>

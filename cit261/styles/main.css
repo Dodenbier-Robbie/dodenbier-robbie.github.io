@@ -91,3 +91,14 @@ label span {
 pre {
     font-size: .75rem;
 }
+
+#canvas {
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+}
+
+.playable-buttons {
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
