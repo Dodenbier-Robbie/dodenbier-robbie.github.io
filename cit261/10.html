@@ -12,25 +12,22 @@
     <body>
         <h2>HTML5 Tags - Video, Audio, and Canvas</h2>
         <canvas id="canvas" width="400" height="200"></canvas>
-        <div class="playable-buttons">
-          <input id="edit" type="button" value="Edit" />
-          <input id="reset" type="button" value="Reset" />
-        </div>
-        <textarea id="code" class="playable-code" rows="10" cols="50">
+        <div class="canvasPlayArea">
+            <textarea id="code" rows="10" cols="48">        
 ctx.fillStyle = "blue";
 ctx.fillRect(10, 10, 380, 180);
 ctx.clearRect(125, 50, 150, 100);
 ctx.beginPath();
 ctx.arc(200,100,40,0,2*Math.PI);
 ctx.fill();
-        </textarea><br>
-        <button type="button" onclick="window.location.href='index.html'">Home</button>
+            </textarea>
+        </div>
+        <button type="button" onclick="window.location.href='index.html'">Home</button>&nbsp;<button type="button" onclick="clearFields()">Reset</button>
         <script>
             var canvas = document.getElementById("canvas");
             var ctx = canvas.getContext("2d");
+            
             var textarea = document.getElementById("code");
-            var reset = document.getElementById("reset");
-            var edit = document.getElementById("edit");
             var code = textarea.value;
 
             function drawCanvas() {
@@ -38,17 +35,12 @@ ctx.fill();
               eval(textarea.value);
             }
 
-            reset.addEventListener("click", function() {
-              textarea.value = code;
-              drawCanvas();
-            });
-
-            edit.addEventListener("click", function() {
-              textarea.focus();
-            })
-
             textarea.addEventListener("input", drawCanvas);
             window.addEventListener("load", drawCanvas);
+            
+            function clearFields() {
+                location.reload();
+            }
         </script>
     </body>
 </html>
