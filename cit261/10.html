@@ -11,8 +11,15 @@
     </head>
     <body>
         <h2>HTML5 Tags - Video, Audio, and Canvas</h2>
+        <h3>Video</h3>
+        <video width="400" height="200" controls>
+          <source src="images/647597071.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h3>Canvas</h3>
         <canvas id="canvas" width="400" height="200"></canvas>
         <div class="canvasPlayArea">
+            <p>Edit or add your own canvas commands below. Changes will be made in real-time:</p>
             <textarea id="code" rows="10" cols="48">        
 ctx.fillStyle = "blue";
 ctx.fillRect(10, 10, 380, 180);
