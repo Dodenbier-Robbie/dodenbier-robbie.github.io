@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html lang="en-US">
     <head>
@@ -16,7 +17,7 @@
         <button type="button" onclick="window.location.href='index.html'">Home</button>&nbsp;<button type="button" onclick="clearFields()">Reset</button>
         <div class="passwordValidation">
             <form onsubmit="submitAlert()" action="#">
-                <label><span>User Name: </span><input type="text" name="userName" id="testUserName"></label>
+                <label><span>User Name: </span><input type="text" name="userName" id="testUserName" onblur="colorChange()"></label>
                 <label><span>Password: </span><input type="password" id="psw" name="psw" required></label>
                 <input type="submit" value="Submit">
             </form>
@@ -32,7 +33,7 @@
             </ul>
         </div>
         <script>
-            var myInput = document.getElementById("psw");        
+            var myPassword = document.getElementById("psw");        
             var canvas = document.getElementById("passwordCanvas");
             var ctx = canvas.getContext("2d");
             ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -41,20 +42,20 @@
             var securityScore = 0;
 
             // When the user clicks on the password field, show the message box
-            myInput.onfocus = function() {
+            myPassword.onfocus = function() {
                 document.getElementById("message").style.display = "block";
                 document.getElementById("passwordCanvas").style.display = "block";
             }
 
             // When the user clicks outside of the password field, hide the message box
-            myInput.onblur = function() {
+            myPassword.onblur = function() {
                 document.getElementById("message").style.display = "none";
                 document.getElementById("passwordCanvas").style.display = "none";
             }
             
-            myInput.onkeyup = function() {
+            myPassword.onkeyup = function() {
                 var lowerCase = /[a-z]/g;
-                if(myInput.value.match(lowerCase)) {
+                if(myPassword.value.match(lowerCase)) {
                     var lowCaseScore = 1;
                     document.getElementById("letter").style.color = "#4CAF50";
                 }else {
@@ -62,7 +63,7 @@
                 }
                 
                 var upperCase = /[A-Z]/g;
-                if(myInput.value.match(upperCase)) {
+                if(myPassword.value.match(upperCase)) {
                     var upperCaseScore = 1;
                     document.getElementById("capital").style.color = "#4CAF50";
                 }else {
@@ -70,14 +71,14 @@
                 }
                 
                 var numberCheck = /[0-9]/g;
-                if(myInput.value.match(numberCheck)) {
+                if(myPassword.value.match(numberCheck)) {
                     var numberScore = 1;
                     document.getElementById("numbers").style.color = "#4CAF50";
                 }else {
                     var numberScore = 0;
                 }
                 
-                if(myInput.value.length >= 8) {
+                if(myPassword.value.length >= 8) {
                     var lengthScore = 2;
                     document.getElementById("length").style.color = "#4CAF50";
                 }else {
@@ -115,6 +116,12 @@
             }
             function clearFields() {
                 location.reload();
+            }
+            function colorChange() {
+                var myUserName = document.getElementById("testUserName").value;
+                if(myUserName === "") {
+                    document.getElementById("testUserName").style.backgroundColor = "#ffdde3";
+                }
             }
         </script>
     </body>
