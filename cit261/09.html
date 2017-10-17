@@ -23,18 +23,15 @@
         <canvas id="passwordCanvas" height="10px"></canvas>
         <div id="message">
           <h3>Password must contain the following:</h3>
-            <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-            <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-            <p id="number" class="invalid">A <b>number</b></p>
-            <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+            <ul>
+                <li>A <b>lowercase</b> letter</li>
+                <li>A <b>capital (uppercase)</b> letter</li>
+                <li>A <b>number</b></li>
+                <li>Minimum <b>8 characters</b></li>
+            </ul>
         </div>
         <script>
-            var myInput = document.getElementById("psw");
-            var letter = document.getElementById("letter");
-            var capital = document.getElementById("capital");
-            var number = document.getElementById("number");
-            var length = document.getElementById("length");
-            
+            var myInput = document.getElementById("psw");        
             var canvas = document.getElementById("passwordCanvas");
             var ctx = canvas.getContext("2d");
             ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -56,44 +53,28 @@
             myInput.onkeyup = function() {
                 var lowerCase = /[a-z]/g;
                 if(myInput.value.match(lowerCase)) {
-                    letter.classList.remove("invalid");
-                    letter.classList.add("valid");
                     var lowCaseScore = 1;
                 }else {
-                    letter.classList.remove("valid");
-                    letter.classList.add("invalid");
                     var lowCaseScore = 0;
                 }
                 
                 var upperCase = /[A-Z]/g;
                 if(myInput.value.match(upperCase)) {
-                    capital.classList.remove("invalid");
-                    capital.classList.add("valid");
                     var upperCaseScore = 1;
                 }else {
-                    capital.classList.remove("valid");
-                    capital.classList.add("invalid");
                     var upperCaseScore = 0;
                 }
                 
                 var numberCheck = /[0-9]/g;
                 if(myInput.value.match(numberCheck)) {
-                    number.classList.remove("invalid");
-                    number.classList.add("valid");
                     var numberScore = 1;
                 }else {
-                    number.classList.remove("valid");
-                    number.classList.add("invalid");
                     var numberScore = 0;
                 }
                 
                 if(myInput.value.length >= 8) {
-                    length.classList.remove("invalid");
-                    length.classList.add("valid");
                     var lengthScore = 2;
                 }else {
-                    length.classList.remove("valid");
-                    length.classList.add("invalid");
                     var lengthScore = 0;
                 }
                 
