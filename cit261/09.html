@@ -13,10 +13,11 @@
     <body>
         <h2>Standard JavaScript Events Including those for Mobile Devices</h2>
         <p>Password Validation</p>
+        <button type="button" onclick="window.location.href='index.html'">Home</button>&nbsp;<button type="button" onclick="clearFields()">Reset</button>
         <div class="passwordValidation">
-            <form action="/action_page.php">
+            <form onsubmit="submitAlert()" action="#">
                 <label><span>User Name: </span><input type="text" name="userName" id="testUserName"></label>
-                <label><span>Password: </span><input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required></label>
+                <label><span>Password: </span><input type="password" id="psw" name="psw" required></label>
                 <input type="submit" value="Submit">
             </form>
         </div>
@@ -37,6 +38,7 @@
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.fillStyle = "red";
             ctx.fillRect(0, 0, 300, 10);
+            var securityScore = 0;
 
             // When the user clicks on the password field, show the message box
             myInput.onfocus = function() {
@@ -78,7 +80,7 @@
                     var lengthScore = 0;
                 }
                 
-                var securityScore = lowCaseScore + upperCaseScore + numberScore + lengthScore;
+                securityScore = lowCaseScore + upperCaseScore + numberScore + lengthScore;
                 if(securityScore == 1) {
                     ctx.fillStyle = "green";
                     ctx.fillRect(0, 0, 50, 10);
@@ -98,6 +100,17 @@
                     ctx.fillStyle = "green";
                     ctx.fillRect(0, 0, 300, 10);
                 }
+            }
+            
+            function submitAlert() {
+                if(securityScore > 3) {
+                    alert("You have submitted a STRONG password!!");
+                }else {
+                    alert("You have submitted a WEAK password. Please try again!");
+                }
+            }
+            function clearFields() {
+                location.reload();
             }
         </script>
     </body>
