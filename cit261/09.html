@@ -20,6 +20,7 @@
                 <input type="submit" value="Submit">
             </form>
         </div>
+        <canvas id="passwordCanvas" height="10px"></canvas>
         <div id="message">
           <h3>Password must contain the following:</h3>
             <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
@@ -33,15 +34,23 @@
             var capital = document.getElementById("capital");
             var number = document.getElementById("number");
             var length = document.getElementById("length");
+            
+            var canvas = document.getElementById("passwordCanvas");
+            var ctx = canvas.getContext("2d");
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "red";
+            ctx.fillRect(0, 0, 300, 10);
 
             // When the user clicks on the password field, show the message box
             myInput.onfocus = function() {
                 document.getElementById("message").style.display = "block";
+                document.getElementById("passwordCanvas").style.display = "block";
             }
 
             // When the user clicks outside of the password field, hide the message box
             myInput.onblur = function() {
                 document.getElementById("message").style.display = "none";
+                document.getElementById("passwordCanvas").style.display = "none";
             }
             
             myInput.onkeyup = function() {
@@ -49,35 +58,64 @@
                 if(myInput.value.match(lowerCase)) {
                     letter.classList.remove("invalid");
                     letter.classList.add("valid");
+                    var lowCaseScore = 1;
                 }else {
                     letter.classList.remove("valid");
                     letter.classList.add("invalid");
+                    var lowCaseScore = 0;
                 }
                 
                 var upperCase = /[A-Z]/g;
                 if(myInput.value.match(upperCase)) {
                     capital.classList.remove("invalid");
                     capital.classList.add("valid");
+                    var upperCaseScore = 1;
                 }else {
                     capital.classList.remove("valid");
                     capital.classList.add("invalid");
+                    var upperCaseScore = 0;
                 }
                 
                 var numberCheck = /[0-9]/g;
                 if(myInput.value.match(numberCheck)) {
                     number.classList.remove("invalid");
                     number.classList.add("valid");
+                    var numberScore = 1;
                 }else {
                     number.classList.remove("valid");
                     number.classList.add("invalid");
+                    var numberScore = 0;
                 }
                 
                 if(myInput.value.length >= 8) {
                     length.classList.remove("invalid");
                     length.classList.add("valid");
+                    var lengthScore = 2;
                 }else {
                     length.classList.remove("valid");
                     length.classList.add("invalid");
+                    var lengthScore = 0;
+                }
+                
+                var securityScore = lowCaseScore + upperCaseScore + numberScore + lengthScore;
+                if(securityScore == 1) {
+                    ctx.fillStyle = "green";
+                    ctx.fillRect(0, 0, 50, 10);
+                }
+                
+                if(securityScore == 2) {
+                    ctx.fillStyle = "green";
+                    ctx.fillRect(0, 0, 100, 10);
+                }
+                
+                if(securityScore == 3) {
+                    ctx.fillStyle = "green";
+                    ctx.fillRect(0, 0, 150, 10);
+                }
+                
+                if(securityScore > 3) {
+                    ctx.fillStyle = "green";
+                    ctx.fillRect(0, 0, 300, 10);
                 }
             }
         </script>
