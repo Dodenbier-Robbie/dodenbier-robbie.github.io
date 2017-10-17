@@ -17,7 +17,7 @@
         <button type="button" onclick="window.location.href='index.html'">Home</button>&nbsp;<button type="button" onclick="clearFields()">Reset</button>
         <div class="passwordValidation">
             <form onsubmit="submitAlert()" action="#">
-                <label><span>User Name: </span><input type="text" name="userName" id="testUserName" onblur="colorChange()"></label>
+                <label><span>User Name: </span><input type="text" name="userName" id="testUserName" onblur="colorChange()" required></label>
                 <label><span>Password: </span><input type="password" id="psw" name="psw" required></label>
                 <input type="submit" value="Submit">
             </form>
