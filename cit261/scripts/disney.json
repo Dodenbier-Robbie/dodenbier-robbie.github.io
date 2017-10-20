@@ -32,8 +32,8 @@
     "ride": "Star Tours",
     "location": ["Disneyland", "Disney's Hollywood Studios", "Tokyo Disneyland", "Disneyland Paris"],
     "picURL": "https://upload.wikimedia.org/wikipedia/commons/6/61/Star_Tours_logo.svg",
-    "heightRestriction": "None",
-    "firstOpen": "40 inches"
+    "heightRestriction": "40 inches",
+    "firstOpen": "December 1986"
 },{
     "ride": "Toy Story Midway Mania!",
     "location": ["Disney California Adventure", "Disney's Hollywood Studios", "Tokyo DisneySea"],
