@@ -1,7 +1,7 @@
 function myAnimate() {
     var sun = document.getElementById("animate");
     var sky = document.getElementById("container");
-    var pos = 0;
+    var pos = 5;
     var id = setInterval(frame, 10);
     sky.style.transition = "opacity 3s linear 0s";
     sky.style.opacity = 0;
