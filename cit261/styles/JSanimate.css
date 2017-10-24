@@ -19,3 +19,8 @@ main {
   border-radius: 50px;
   top: 5px;
 }
+
+.myButtons {
+    padding-top: 10px;
+    padding-left: 5px;
+}
