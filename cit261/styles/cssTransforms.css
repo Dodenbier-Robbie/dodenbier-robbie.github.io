@@ -1,0 +1,43 @@
+.showbox {
+    float: left;
+    width: 200px;
+    height: 100px;
+    border: 2px solid darkmagenta;
+    text-align: center;
+    margin: 4em 1em;
+    line-height: 100px;
+    transition: 1s ease-in-out;
+}
+
+.showbox.translate {
+    border: 2px solid green;
+}
+
+.showbox.rotate {
+    border: 2px solid red;
+}
+
+.showbox.skew {
+    border: 2px solid blue;
+}
+
+.showbox.translate:hover {
+    transform: translate(15em);
+}
+
+.showbox.rotate:hover {
+    transform: rotate(172deg);
+}
+
+.showbox.skew:hover {
+    transform: skew(20deg, 10deg);
+}
+
+.showbox.scaleup:hover {
+    transform: scale(1.5, 1.5);
+}
+
+.showbox.translate:hover + .showbox.rotate {
+    transform: translate(0,10em);
+    background: yellow;
+}
