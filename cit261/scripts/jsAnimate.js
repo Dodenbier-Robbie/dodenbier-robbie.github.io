@@ -24,7 +24,7 @@ function sunRise() {
     var sky = document.getElementById("container");
     var pos = 300;
     var id = setInterval(frame, 10);    
-    sky.style.transition = "opacity 3s linear 0s";
+    sky.style.transition = "opacity 4s linear 0s";
     sky.style.opacity = 1;
     
     function frame() {
