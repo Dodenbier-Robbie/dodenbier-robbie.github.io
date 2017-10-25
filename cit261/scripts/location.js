@@ -112,9 +112,8 @@ function weatherForecastJSON(lat, long) {
               document.getElementById("dailyLow").innerHTML = currentLow + "&deg; F";
               document.getElementById("dayImage").innerHTML = dayImage;
               document.getElementById("dayDay").innerHTML = dayDayName;
-              document.getElementById("dayText").innerHTML = dayText;
               document.getElementById("dayCondition").innerHTML = dayCondition;
-              document.getElementById("dayDate").innerHTML = dayMonth + " / " + dayDay;
+              document.getElementById("dayDate").innerHTML = dayMonth + "/" + dayDay;
               document.getElementById("dayHigh").innerHTML = "HIGH " + currentHigh + "&deg; F";
               
               weatherConditionsJSON(lat, long);
