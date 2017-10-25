@@ -25,6 +25,23 @@ function geoFindMe() {
     return;
 }
 
+function weatherGeoJSON() {
+    var zipCode = document.getElementById("zipCode").value;
+    var url = "https://api.wunderground.com/api/971a6113214d3607/geolookup/q/" + zipCode + ".json";
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", url, true);
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+          var response = JSON.parse(this.responseText);
+          var lat = response.location.lat;
+          var long = response.location.lon;
+          weatherForecastJSON(lat, long);
+          weatherConditionsJSON(lat, long);
+      }
+    }
+xhttp.send();   
+}
+
 function weatherForecastJSON(lat, long) {
     var url = "https://api.wunderground.com/api/971a6113214d3607/forecast/q/" + lat + "," + long + ".json";
     var xhttp = new XMLHttpRequest();
@@ -61,13 +78,15 @@ function weatherConditionsJSON(lat, long) {
           var response = JSON.parse(this.responseText);
           
           //var image = '<img src="' + response.current_observation.icon_url + '" />';
-          var image = '<img src="https://icons.wxug.com/i/c/v4/31.svg" />';
+          
           var location = response.current_observation.display_location.full;
           var conditions = response.current_observation.weather;
           var temp = response.current_observation.temp_f;
           var icon = response.current_observation.icon;
           
-          //if(icon == "clear")
+          if(icon == "clear") {
+              var image = '<img src="https://icons.wxug.com/i/c/v4/31.svg" />';
+          }
           
           document.getElementById("weatherImage").innerHTML = image;
           document.getElementById("location").innerHTML = location;

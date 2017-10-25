@@ -8,16 +8,20 @@
         <link rel="stylesheet" href="styles/normalize.css">
         <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
         <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="styles/project.css">
         <script type="text/javascript" src="scripts/location.js"></script>
     </head>
     <body>
         <h2>Current Weather Conditions</h2>
         <div id="weatherImage"></div>
+        <div id="conditions"></div>
         <div id="location"></div>
         <div id="tempDegree"></div>
-        <div id="conditions"></div>
-        <p><button onclick="geoFindMe()">Show my location</button></p>
+        <p>
+            <input type="number" name="zip_code" id="zipCode"><button onclick="weatherGeoJSON()">Submit</button>
+            <span onclick="geoFindMe()"><i class="fa fa-location-arrow" aria-hidden="true"></i></span>
+        </p>
         <div id="out"></div>
         <div id="location"></div>
         <div id="day"></div>
