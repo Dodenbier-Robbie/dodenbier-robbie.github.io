@@ -29,6 +29,8 @@ function geoFindMe() {
 function weatherGeoJSON() {
     var zipCode = document.getElementById("zipCode").value;
     var url = "https://api.wunderground.com/api/971a6113214d3607/geolookup/q/" + zipCode + ".json";
+    var zip = document.getElementById("zipCode");
+    zip.value = "";
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET", url, true);
     xhttp.onreadystatechange = function() {
@@ -51,32 +53,29 @@ function weatherForecastJSON(lat, long) {
       if (this.readyState == 4 && this.status == 200) {
           var response = JSON.parse(this.responseText);
           
-          var day = [];
-          var text = [];
-          for(var i = 0; i < response.forecast.txt_forecast.forecastday.length; i++) {
-              day.push(response.forecast.txt_forecast.forecastday[i].title);
-              text.push(response.forecast.txt_forecast.forecastday[i].fcttext);
-          }
-          
           var currentIcon = response.forecast.txt_forecast.forecastday[0].icon;
+          var currentHigh = response.forecast.simpleforecast.forecastday[0].high.fahrenheit;
+          var currentLow = response.forecast.simpleforecast.forecastday[0].low.fahrenheit;
           
           if(currentIcon == "nt_clear") {
-              var image = '<img src="https://icons.wxug.com/i/c/v4/31.svg" />';
+              var currentImage = '<img src="https://icons.wxug.com/i/c/v4/31.svg" />';
           }
           
           if(currentIcon == "clear") {
-              var image = '<img src="https://icons.wxug.com/i/c/v4/32.svg" />';
+              var currentImage = '<img src="https://icons.wxug.com/i/c/v4/32.svg" />';
           }
           
-          document.getElementById("weatherImage").innerHTML = image;
-          
-          var forecastOutput = "";
-          
-          for(var i = 0; i < day.length; i++) {
-              forecastOutput += day[i] + " - " + text[i] + "<br>";
+          if(currentIcon == "partlycloudy") {
+              var currentImage = '<img src="https://icons.wxug.com/i/c/v4/30.svg" />';
           }
           
-          document.getElementById("day").innerHTML = forecastOutput;
+          if(currentIcon == "nt_partlycloudy") {
+              var currentImage = '<img src="https://icons.wxug.com/i/c/v4/30.svg" />';
+          }
+          
+          document.getElementById("weatherImage").innerHTML = currentImage;
+          document.getElementById("dailyHigh").innerHTML = currentHigh + "&deg; F | ";
+          document.getElementById("dailyLow").innerHTML = currentLow + "&deg; F";
       }
     }
 xhttp.send();   
