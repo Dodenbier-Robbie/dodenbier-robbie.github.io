@@ -47,3 +47,12 @@
     padding-left: 3px;
     float: left;
 }
+
+.todayForecast {
+    position: relative;
+    top: 40px;
+    width: 250px;
+    border: 1px solid black;
+    display: block;
+    background-color: #ECECEC;
+}

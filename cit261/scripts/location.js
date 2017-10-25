@@ -66,6 +66,30 @@ function weatherForecastJSON(lat, long) {
               var currentIcon = response.forecast.txt_forecast.forecastday[0].icon;
               var currentHigh = response.forecast.simpleforecast.forecastday[0].high.fahrenheit;
               var currentLow = response.forecast.simpleforecast.forecastday[0].low.fahrenheit;
+              
+              var dayImage = response.forecast.txt_forecast.forecastday[0].icon_url;
+              dayImage = '<img src="' + dayImage + '" />';
+              var dayDayName = response.forecast.txt_forecast.forecastday[0].title;
+              var dayText = response.forecast.txt_forecast.forecastday[0].fcttext;
+              var dayCondition = response.forecast.simpleforecast.forecastday[0].conditions;
+              var dayMonth = response.forecast.simpleforecast.forecastday[0].date.month;
+              var dayDay = response.forecast.simpleforecast.forecastday[0].date.day;
+              
+              var nightImage = response.forecast.txt_forecast.forecastday[1].icon_url;
+              nightImage = '<img src="' + nightImage + '" />';
+              var nightDayName = response.forecast.txt_forecast.forecastday[1].title;
+              var nightText = response.forecast.txt_forecast.forecastday[1].fcttext;
+              var nightConditions = response.forecast.simpleforecast.forecastday[1].conditions;
+              var nightMonth = response.forecast.simpleforecast.forecastday[1].date.month;
+              var nightDay = response.forecast.simpleforecast.forecastday[1].date.day;
+              
+              var tomorrowImage = response.forecast.txt_forecast.forecastday[2].icon_url;
+              tomorrowImage = '<img src="' + tomorrowImage + '" />';
+              var tomorrowDayName = response.forecast.txt_forecast.forecastday[2].title;
+              var tomorrowText = response.forecast.txt_forecast.forecastday[2].fcttext;
+              var tomorrowConditions = response.forecast.simpleforecast.forecastday[2].conditions;
+              var tomorrowMonth = response.forecast.simpleforecast.forecastday[2].date.month;
+              var tomorrowDay = response.forecast.simpleforecast.forecastday[2].date.day;
 
               if(currentIcon == "nt_clear") {
                   var currentImage = '<img src="https://icons.wxug.com/i/c/v4/31.svg" />';
@@ -86,6 +110,12 @@ function weatherForecastJSON(lat, long) {
               document.getElementById("weatherImage").innerHTML = currentImage;
               document.getElementById("dailyHigh").innerHTML = currentHigh + "&deg; F | ";
               document.getElementById("dailyLow").innerHTML = currentLow + "&deg; F";
+              document.getElementById("dayImage").innerHTML = dayImage;
+              document.getElementById("dayDay").innerHTML = dayDayName;
+              document.getElementById("dayText").innerHTML = dayText;
+              document.getElementById("dayCondition").innerHTML = dayCondition;
+              document.getElementById("dayDate").innerHTML = dayMonth + " / " + dayDay;
+              document.getElementById("dayHigh").innerHTML = "HIGH " + currentHigh + "&deg; F";
               
               weatherConditionsJSON(lat, long);
           }
