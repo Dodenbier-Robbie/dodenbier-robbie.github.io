@@ -26,7 +26,7 @@ function geoFindMe() {
 }
 
 function weatherForecastJSON(lat, long) {
-    var url = "http://api.wunderground.com/api/971a6113214d3607/forecast/q/" + lat + "," + long + ".json";
+    var url = "https://api.wunderground.com/api/971a6113214d3607/forecast/q/" + lat + "," + long + ".json";
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET", url, true);
     xhttp.onreadystatechange = function() {
@@ -53,7 +53,7 @@ xhttp.send();
 }
 
 function weatherConditionsJSON(lat, long) {
-    var url = "http://api.wunderground.com/api/971a6113214d3607/conditions/q/" + lat + "," + long + ".json";
+    var url = "https://api.wunderground.com/api/971a6113214d3607/conditions/q/" + lat + "," + long + ".json";
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET", url, true);
     xhttp.onreadystatechange = function() {
