@@ -60,8 +60,8 @@ function weatherConditionsJSON(lat, long) {
       if (this.readyState == 4 && this.status == 200) {
           var response = JSON.parse(this.responseText);
           
-          //var image = '<img src="' + response.current_observation.icon_url + '" />';
-          var image = '<img src="https://icons.wxug.com/i/c/v4/31.svg" />';
+          var image = '<img src="' + response.current_observation.icon_url + '" />';
+          //var image = '<img src="https://icons.wxug.com/i/c/v4/31.svg" />';
           var location = response.current_observation.display_location.full;
           var conditions = response.current_observation.weather;
           var temp = response.current_observation.temp_f;
