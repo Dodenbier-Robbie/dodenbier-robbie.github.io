@@ -1,10 +1,35 @@
 #weatherImage img {
     width: 75px;
     height: 75px;
+    float: left;
 }
 
 .fa {
     padding-left: 5px;
     font-size: 20px;
     color: #1590bd;
+}
+
+#location {
+    font-size: 3rem;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+
+#conditions {
+    padding-left: 15px;
+    padding-top: 10px;
+    font-size: 1.5em;
+    font-weight: 600;
+    float: left;
+}
+
+#tempDegree {
+    font-size: 1.15em;
+    padding-top: 40px;
+    padding-left: 90px;
+}
+
+#day {
+    padding-top: 35px;
 }

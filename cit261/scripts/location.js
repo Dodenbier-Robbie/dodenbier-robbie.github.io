@@ -1,5 +1,5 @@
 function geoFindMe() {
-    var output = document.getElementById("out");
+    var output = document.getElementById("message");
 
     if (!navigator.geolocation){
         output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
@@ -9,7 +9,7 @@ function geoFindMe() {
     function success(position) {
             var latitude = position.coords.latitude;
             var longitude = position.coords.longitude;
-            out.innerHTML = "";
+            output.innerHTML = "";
             weatherForecastJSON(latitude, longitude);
             weatherConditionsJSON(latitude, longitude);
         }
@@ -18,7 +18,8 @@ function geoFindMe() {
         output.innerHTML = "Unable to retrieve your location";
     }
     
-    output.innerHTML = "<p>Locating…</p>";
+    var refreshIcon = '<i class="fa fa-spinner fa-spin"></i>';
+    output.innerHTML = "<p>" + refreshIcon + " Locating…</p>";
     
     navigator.geolocation.getCurrentPosition(success, error);
     
@@ -57,6 +58,18 @@ function weatherForecastJSON(lat, long) {
               text.push(response.forecast.txt_forecast.forecastday[i].fcttext);
           }
           
+          var currentIcon = response.forecast.txt_forecast.forecastday[0].icon;
+          
+          if(currentIcon == "nt_clear") {
+              var image = '<img src="https://icons.wxug.com/i/c/v4/31.svg" />';
+          }
+          
+          if(currentIcon == "clear") {
+              var image = '<img src="https://icons.wxug.com/i/c/v4/32.svg" />';
+          }
+          
+          document.getElementById("weatherImage").innerHTML = image;
+          
           var forecastOutput = "";
           
           for(var i = 0; i < day.length; i++) {
@@ -84,11 +97,6 @@ function weatherConditionsJSON(lat, long) {
           var temp = response.current_observation.temp_f;
           var icon = response.current_observation.icon;
           
-          if(icon == "clear") {
-              var image = '<img src="https://icons.wxug.com/i/c/v4/31.svg" />';
-          }
-          
-          document.getElementById("weatherImage").innerHTML = image;
           document.getElementById("location").innerHTML = location;
           document.getElementById("conditions").innerHTML = conditions;
           document.getElementById("tempDegree").innerHTML = temp + "&deg; F";
