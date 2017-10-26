@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 #weatherImage img {
     width: 75px;
     height: 75px;
@@ -36,32 +40,33 @@
 
 #dailyHigh {
     font-size: .8em;
-    padding-top: 10px;
+    padding-top: 5px;
     padding-left: 21px;
     float: left;
 }
 
 #dailyLow {
     font-size: .8em;
-    padding-top: 10px;
+    padding-top: 5px;
     padding-left: 3px;
     float: left;
 }
 
-.todayForecast {
+.col-container {
     position: relative;
     text-align: center;
     top: 60px;
     left: -165px;
-    width: 150px;
+    width: 75%;
     background-color: #F7F7F7;
-    padding-bottom: 25px;
-    padding-top: 10px;
     float: left;
+    font-size: .875rem;
+    display: table;
 }
 
-.todayForecast.night {
-    background-color: #E7E7E7;
+.col {
+    display: table-cell;
+    padding: 10px;
 }
 
 .currentWeather {
@@ -69,15 +74,11 @@
     left: 60px;
 }
 
-@media screen and (max-width: 619px) {
-    .todayForecast {
-        position: relative;
-        text-align: center;
+@media screen and (max-width: 666px) {
+    .col-container {
         left: 25px;
         top: 60px;
         width: 100%;
-        background-color: #F7F7F7;
-        padding-bottom: 5px;
-        padding-top: 5px;
+        display: block;
     }
 }

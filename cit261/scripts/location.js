@@ -89,10 +89,11 @@ function weatherForecastJSON(lat, long) {
               var tomorrowMonth = response.forecast.simpleforecast.forecastday[1].date.month;
               var tomorrowDay = response.forecast.simpleforecast.forecastday[1].date.day;
               var tomorrowHigh = response.forecast.simpleforecast.forecastday[1].high.fahrenheit;
+              var tomorrowLow = response.forecast.simpleforecast.forecastday[1].low.fahrenheit;
               
               document.getElementById("dayImage").innerHTML = dayImage;
               document.getElementById("dayDay").innerHTML = dayDayName;
-              document.getElementById("dayCondition").innerHTML = dayCondition;
+              document.getElementById("dayText").innerHTML = dayText;
               document.getElementById("dayDate").innerHTML = dayMonth + "/" + dayDay;
               document.getElementById("dailyLow").innerHTML = nightLow + "&deg; F";
               document.getElementById("dayHigh").innerHTML = "HIGH<b> " + dayHigh + "</b>&deg; F";
@@ -100,15 +101,15 @@ function weatherForecastJSON(lat, long) {
               
               document.getElementById("nightImage").innerHTML = nightImage;
               document.getElementById("nightDay").innerHTML = nightDayName;
-              document.getElementById("nightCondition").innerHTML = nightConditions;
+              document.getElementById("nightText").innerHTML = nightText;
               document.getElementById("nightDate").innerHTML = nightMonth + "/" + nightDay;
               document.getElementById("nightLow").innerHTML = "LOW<b> " + nightLow + "</b>&deg; F";
               
               document.getElementById("tomorrowImage").innerHTML = tomorrowImage;
               document.getElementById("tomorrowDay").innerHTML = tomorrowDayName;
-              document.getElementById("tomorrowCondition").innerHTML = tomorrowConditions;
+              document.getElementById("tomorrowText").innerHTML = tomorrowText;
               document.getElementById("tomorrowDate").innerHTML = tomorrowMonth + "/" + tomorrowDay;
-              document.getElementById("tomorrowHigh").innerHTML = "HIGH<b>  " + tomorrowHigh + "</b>&deg; F";
+              document.getElementById("tomorrowHigh").innerHTML = "HIGH<b>  " + tomorrowHigh + "</b> | " + tomorrowLow + "&deg; F";
               
               weatherConditionsJSON(lat, long);
           }
@@ -151,6 +152,18 @@ function weatherConditionsJSON(lat, long) {
               }
           }else if(currentIcon == "cloudy") {
                   var currentImage = '<img src="https://icons.wxug.com/i/c/v4/26.svg" />';
+          }else if(currentIcon == "rain") {
+              if(currentHour < 19) {
+                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/40.svg" />';
+              }else {
+                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/45.svg" />';
+              }
+          }else if(currentIcon == "mostlycloudy") {
+              if(currentHour < 19) {
+                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/28.svg" />'; 
+              }else {
+                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/27.svg" />'; 
+              }
           }else {
               var currentImage = '<img src="https://icons.wxug.com/i/c/v4/32.svg" />';
           }
