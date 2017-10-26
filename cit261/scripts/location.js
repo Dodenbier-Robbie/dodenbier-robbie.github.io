@@ -76,7 +76,7 @@ function weatherForecastJSON(lat, long) {
               nightImage = '<img src="' + nightImage + '" />';
               var nightDayName = response.forecast.txt_forecast.forecastday[1].title;
               var nightText = response.forecast.txt_forecast.forecastday[1].fcttext;
-              var nightConditions = response.forecast.simpleforecast.forecastday[1].conditions;
+              var nightConditions = response.forecast.simpleforecast.forecastday[0].conditions;
               var nightMonth = response.forecast.simpleforecast.forecastday[0].date.month;
               var nightDay = response.forecast.simpleforecast.forecastday[0].date.day;
               var nightLow = response.forecast.simpleforecast.forecastday[0].low.fahrenheit;
@@ -85,10 +85,10 @@ function weatherForecastJSON(lat, long) {
               tomorrowImage = '<img src="' + tomorrowImage + '" />';
               var tomorrowDayName = response.forecast.txt_forecast.forecastday[2].title;
               var tomorrowText = response.forecast.txt_forecast.forecastday[2].fcttext;
-              var tomorrowConditions = response.forecast.simpleforecast.forecastday[2].conditions;
+              var tomorrowConditions = response.forecast.simpleforecast.forecastday[1].conditions;
               var tomorrowMonth = response.forecast.simpleforecast.forecastday[1].date.month;
               var tomorrowDay = response.forecast.simpleforecast.forecastday[1].date.day;
-              var tomorrowHigh = response.forecast.simpleforecast.forecastday[2].high.fahrenheit;
+              var tomorrowHigh = response.forecast.simpleforecast.forecastday[1].high.fahrenheit;
               
               document.getElementById("dayImage").innerHTML = dayImage;
               document.getElementById("dayDay").innerHTML = dayDayName;
