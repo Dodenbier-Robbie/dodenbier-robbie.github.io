@@ -88,8 +88,8 @@ function weatherForecastJSON(lat, long) {
               var tomorrowDayName = response.forecast.txt_forecast.forecastday[2].title;
               var tomorrowText = response.forecast.txt_forecast.forecastday[2].fcttext;
               var tomorrowConditions = response.forecast.simpleforecast.forecastday[2].conditions;
-              var tomorrowMonth = response.forecast.simpleforecast.forecastday[2].date.month;
-              var tomorrowDay = response.forecast.simpleforecast.forecastday[2].date.day;
+              var tomorrowMonth = response.forecast.simpleforecast.forecastday[1].date.month;
+              var tomorrowDay = response.forecast.simpleforecast.forecastday[1].date.day;
               var tomorrowHigh = response.forecast.simpleforecast.forecastday[2].high.fahrenheit;
 
               if(currentIcon == "nt_clear") {

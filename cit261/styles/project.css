@@ -49,9 +49,9 @@
 }
 
 .todayForecast {
-    position: relative;
+    position: fixed;
     text-align: center;
-    top: 50px;
+    top: 300px;
     width: 150px;
     display: block;
     background-color: #F7F7F7;
@@ -60,6 +60,15 @@
     float: left;
 }
 
+.todayForecast.today {
+    left: 228px;
+}
+
 .todayForecast.night {
+    left: 378px;
     background-color: #E7E7E7;
+}
+
+.todayForecast.tomorrow {
+    left: 528px;
 }
