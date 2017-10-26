@@ -63,3 +63,21 @@
 .todayForecast.night {
     background-color: #E7E7E7;
 }
+
+.currentWeather {
+    position: relative;
+    left: 60px;
+}
+
+@media screen and (max-width: 619px) {
+    .todayForecast {
+        position: relative;
+        text-align: center;
+        left: 25px;
+        top: 60px;
+        width: 100%;
+        background-color: #F7F7F7;
+        padding-bottom: 5px;
+        padding-top: 5px;
+    }
+}
