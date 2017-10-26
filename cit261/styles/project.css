@@ -76,7 +76,7 @@
 
 @media screen and (max-width: 666px) {
     .col-container {
-        left: 25px;
+        left: 5px;
         top: 60px;
         width: 100%;
         display: block;
