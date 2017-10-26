@@ -80,8 +80,8 @@ function weatherForecastJSON(lat, long) {
               var nightDayName = response.forecast.txt_forecast.forecastday[1].title;
               var nightText = response.forecast.txt_forecast.forecastday[1].fcttext;
               var nightConditions = response.forecast.simpleforecast.forecastday[1].conditions;
-              var nightMonth = response.forecast.simpleforecast.forecastday[1].date.month;
-              var nightDay = response.forecast.simpleforecast.forecastday[1].date.day;
+              var nightMonth = response.forecast.simpleforecast.forecastday[0].date.month;
+              var nightDay = response.forecast.simpleforecast.forecastday[0].date.day;
               
               var tomorrowImage = response.forecast.txt_forecast.forecastday[2].icon_url;
               tomorrowImage = '<img src="' + tomorrowImage + '" />';
