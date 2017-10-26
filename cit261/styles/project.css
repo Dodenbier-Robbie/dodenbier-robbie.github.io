@@ -49,26 +49,17 @@
 }
 
 .todayForecast {
-    position: fixed;
+    position: relative;
     text-align: center;
-    top: 300px;
+    top: 60px;
+    left: -150px;
     width: 150px;
-    display: block;
     background-color: #F7F7F7;
     padding-bottom: 25px;
     padding-top: 10px;
     float: left;
 }
 
-.todayForecast.today {
-    left: 228px;
-}
-
 .todayForecast.night {
-    left: 378px;
     background-color: #E7E7E7;
-}
-
-.todayForecast.tomorrow {
-    left: 528px;
 }
