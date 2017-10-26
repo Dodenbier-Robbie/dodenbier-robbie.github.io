@@ -90,6 +90,7 @@ function weatherForecastJSON(lat, long) {
               var tomorrowConditions = response.forecast.simpleforecast.forecastday[2].conditions;
               var tomorrowMonth = response.forecast.simpleforecast.forecastday[2].date.month;
               var tomorrowDay = response.forecast.simpleforecast.forecastday[2].date.day;
+              var tomorrowHigh = response.forecast.simpleforecast.forecastday[2].high.fahrenheit;
 
               if(currentIcon == "nt_clear") {
                   var currentImage = '<img src="https://icons.wxug.com/i/c/v4/31.svg" />';
@@ -110,11 +111,24 @@ function weatherForecastJSON(lat, long) {
               document.getElementById("weatherImage").innerHTML = currentImage;
               document.getElementById("dailyHigh").innerHTML = currentHigh + "&deg; F | ";
               document.getElementById("dailyLow").innerHTML = currentLow + "&deg; F";
+              
               document.getElementById("dayImage").innerHTML = dayImage;
               document.getElementById("dayDay").innerHTML = dayDayName;
               document.getElementById("dayCondition").innerHTML = dayCondition;
               document.getElementById("dayDate").innerHTML = dayMonth + "/" + dayDay;
-              document.getElementById("dayHigh").innerHTML = "HIGH " + currentHigh + "&deg; F";
+              document.getElementById("dayHigh").innerHTML = "HIGH<b> " + currentHigh + "</b>&deg; F";
+              
+              document.getElementById("nightImage").innerHTML = nightImage;
+              document.getElementById("nightDay").innerHTML = nightDayName;
+              document.getElementById("nightCondition").innerHTML = nightConditions;
+              document.getElementById("nightDate").innerHTML = nightMonth + "/" + nightDay;
+              document.getElementById("nightLow").innerHTML = "LOW<b> " + currentLow + "</b>&deg; F";
+              
+              document.getElementById("tomorrowImage").innerHTML = tomorrowImage;
+              document.getElementById("tomorrowDay").innerHTML = tomorrowDayName;
+              document.getElementById("tomorrowCondition").innerHTML = tomorrowConditions;
+              document.getElementById("tomorrowDate").innerHTML = tomorrowMonth + "/" + tomorrowDay;
+              document.getElementById("tomorrowHigh").innerHTML = "HIGH<b>  " + tomorrowHigh + "</b>&deg; F";
               
               weatherConditionsJSON(lat, long);
           }

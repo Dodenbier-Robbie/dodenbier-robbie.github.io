@@ -50,17 +50,16 @@
 
 .todayForecast {
     position: relative;
+    text-align: center;
     top: 50px;
-    width: 125px;
-    border: 1px solid black;
+    width: 150px;
     display: block;
     background-color: #F7F7F7;
     padding-bottom: 25px;
-    padding-left: 25px;
     padding-top: 10px;
+    float: left;
 }
 
-#dayImage {
-    width: 5px;
-    padding-left: 15%;
+.todayForecast.night {
+    background-color: #E7E7E7;
 }
