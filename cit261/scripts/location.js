@@ -62,11 +62,6 @@ function weatherForecastJSON(lat, long) {
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
               var response = JSON.parse(this.responseText);
-
-              var currentIcon = response.forecast.txt_forecast.forecastday[0].icon;
-              var currentHigh = response.forecast.simpleforecast.forecastday[0].high.fahrenheit;
-              var currentLow = response.forecast.simpleforecast.forecastday[0].low.fahrenheit;
-              var currentHour = getCurrentTime();
               
               var dayImage = response.forecast.txt_forecast.forecastday[0].icon_url;
               dayImage = '<img src="' + dayImage + '" />';
@@ -75,6 +70,7 @@ function weatherForecastJSON(lat, long) {
               var dayCondition = response.forecast.simpleforecast.forecastday[0].conditions;
               var dayMonth = response.forecast.simpleforecast.forecastday[0].date.month;
               var dayDay = response.forecast.simpleforecast.forecastday[0].date.day;
+              var dayHigh = response.forecast.simpleforecast.forecastday[0].high.fahrenheit;
               
               var nightImage = response.forecast.txt_forecast.forecastday[1].icon_url;
               nightImage = '<img src="' + nightImage + '" />';
@@ -83,6 +79,7 @@ function weatherForecastJSON(lat, long) {
               var nightConditions = response.forecast.simpleforecast.forecastday[1].conditions;
               var nightMonth = response.forecast.simpleforecast.forecastday[0].date.month;
               var nightDay = response.forecast.simpleforecast.forecastday[0].date.day;
+              var nightLow = response.forecast.simpleforecast.forecastday[0].low.fahrenheit;
               
               var tomorrowImage = response.forecast.txt_forecast.forecastday[2].icon_url;
               tomorrowImage = '<img src="' + tomorrowImage + '" />';
@@ -92,38 +89,20 @@ function weatherForecastJSON(lat, long) {
               var tomorrowMonth = response.forecast.simpleforecast.forecastday[1].date.month;
               var tomorrowDay = response.forecast.simpleforecast.forecastday[1].date.day;
               var tomorrowHigh = response.forecast.simpleforecast.forecastday[2].high.fahrenheit;
-
-              if(currentIcon == "clear") {
-                  if(currentHour < 19) {
-                     var currentImage = '<img src="https://icons.wxug.com/i/c/v4/32.svg" />'; 
-                  } else {
-                      var currentImage = '<img src="https://icons.wxug.com/i/c/v4/31.svg" />';
-                  }
-              } else if(currentIcon == "partlycloudy") {
-                  if(currentHour < 19) {
-                     var currentImage = '<img src="https://icons.wxug.com/i/c/v4/30.svg" />'; 
-                  } else {
-                      var currentImage = '<img src="https://icons.wxug.com/i/c/v4/29.svg" />';
-                  }
-              }else {
-                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/32.svg" />';
-              }
-
-              document.getElementById("weatherImage").innerHTML = currentImage;
-              document.getElementById("dailyHigh").innerHTML = currentHigh + "&deg; F | ";
-              document.getElementById("dailyLow").innerHTML = currentLow + "&deg; F";
               
               document.getElementById("dayImage").innerHTML = dayImage;
               document.getElementById("dayDay").innerHTML = dayDayName;
               document.getElementById("dayCondition").innerHTML = dayCondition;
               document.getElementById("dayDate").innerHTML = dayMonth + "/" + dayDay;
-              document.getElementById("dayHigh").innerHTML = "HIGH<b> " + currentHigh + "</b>&deg; F";
+              document.getElementById("dailyLow").innerHTML = nightLow + "&deg; F";
+              document.getElementById("dayHigh").innerHTML = "HIGH<b> " + dayHigh + "</b>&deg; F";
+              document.getElementById("dailyHigh").innerHTML = dayHigh + "&deg; F | ";
               
               document.getElementById("nightImage").innerHTML = nightImage;
               document.getElementById("nightDay").innerHTML = nightDayName;
               document.getElementById("nightCondition").innerHTML = nightConditions;
               document.getElementById("nightDate").innerHTML = nightMonth + "/" + nightDay;
-              document.getElementById("nightLow").innerHTML = "LOW<b> " + currentLow + "</b>&deg; F";
+              document.getElementById("nightLow").innerHTML = "LOW<b> " + nightLow + "</b>&deg; F";
               
               document.getElementById("tomorrowImage").innerHTML = tomorrowImage;
               document.getElementById("tomorrowDay").innerHTML = tomorrowDayName;
@@ -148,17 +127,38 @@ function weatherConditionsJSON(lat, long) {
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
           var response = JSON.parse(this.responseText);
-          
-          //var image = '<img src="' + response.current_observation.icon_url + '" />';
+
+          var currentIcon = response.current_observation.icon;
+          var currentHigh = response.current_observation.temp_f;
+          var currentHour = getCurrentTime();
           
           var location = response.current_observation.display_location.full;
           var conditions = response.current_observation.weather;
           var temp = response.current_observation.temp_f;
           var icon = response.current_observation.icon;
           
+        if(currentIcon == "clear") {
+              if(currentHour < 19) {
+                 var currentImage = '<img src="https://icons.wxug.com/i/c/v4/32.svg" />'; 
+              } else {
+                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/31.svg" />';
+              }
+          } else if(currentIcon == "partlycloudy") {
+              if(currentHour < 19) {
+                 var currentImage = '<img src="https://icons.wxug.com/i/c/v4/30.svg" />'; 
+              } else {
+                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/29.svg" />';
+              }
+          }else if(currentIcon == "cloudy") {
+                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/26.svg" />';
+          }else {
+              var currentImage = '<img src="https://icons.wxug.com/i/c/v4/32.svg" />';
+          }
+          
           document.getElementById("location").innerHTML = location;
           document.getElementById("conditions").innerHTML = conditions;
           document.getElementById("tempDegree").innerHTML = temp + "&deg; F";
+          document.getElementById("weatherImage").innerHTML = currentImage;
       }
     }
 xhttp.send();   
