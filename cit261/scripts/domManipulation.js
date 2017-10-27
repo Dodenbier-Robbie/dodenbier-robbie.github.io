@@ -1,8 +1,14 @@
 function buildPage() {
-    var heading = document.createElement("h1");
-    var headingtext = document.createTextNode("This page is built entirely using DOM Manipulation!");
+    
+    var heading = document.createElement("h2");
+    var headingtext = document.createTextNode("DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc.");
     heading.appendChild(headingtext);
     document.body.appendChild(heading);
+    
+    var heading2 = document.createElement("h1");
+    var headingtext2 = document.createTextNode("This page is built entirely using DOM Manipulation!");
+    heading2.appendChild(headingtext2);
+    document.body.appendChild(heading2);
     
     var image = document.createElement("img");
     image.setAttribute("src", "https://static.pexels.com/photos/261108/pexels-photo-261108.jpeg");
