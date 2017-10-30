@@ -1,0 +1,94 @@
+.horse {
+    padding-top: 50px;
+    width: 100px;
+    height: 50px;
+    font-weight: bold;
+    position: relative;
+    animation: horseRace 5s;
+    animation-delay: 5s;
+}
+
+#finishLine {
+    border-left: 7px solid black;
+    height: 525px;
+    position: absolute;
+    left: 85%;
+    margin-left: -3px;
+    top: 240px;
+}
+
+#horse1 {
+    animation-timing-function: linear;
+}
+#horse2 {
+    animation-timing-function: ease;
+}
+#horse3 {
+    animation-timing-function: ease-in;
+}
+#horse4 {
+    animation-timing-function: ease-out;
+}
+#horse5 {
+    animation-timing-function: ease-in-out;
+}
+
+#stopLight {
+    width: 60px;
+    height: 125px;
+    background-color: black;
+}
+
+#redLight {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    background-color: red;
+    border-radius: 50%;
+    left: 18px;
+    top: 10px;
+}
+
+#yellowLight {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    left: 18px;
+    top: 25px;
+    background-color: black;
+    animation: yellowLight 9.5s;
+    animation-delay: .5s;
+}
+
+#greenLight {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    left: 18px;
+    top: 40px;
+    background-color: black;
+    animation: greenLight 9s;
+    animation-delay: 1s;
+}
+
+@keyframes horseRace {
+    from {left: 0px;}
+    to {left: 100%;}
+}
+
+@keyframes yellowLight {
+    from {background-color: black;}
+    to {background-color: yellow;}
+}
+
+@keyframes greenLight {
+    from {background-color: black;}
+    to {background-color: green;}
+}
+
+#myButtons {
+    margin-right: 5px;
+    padding: 5px;
+}
