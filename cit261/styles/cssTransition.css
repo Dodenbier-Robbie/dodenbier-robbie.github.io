@@ -8,7 +8,7 @@ input[type="text"] {
     margin-top: 6px;
     margin-bottom: 16px;
     transition: 300ms linear;
-    background-color: #ffe8e8;
+    background-color: #fcf9c2;
 }
 
 input#example1:focus {
@@ -27,7 +27,7 @@ input#example3:focus {
 }
 
 input[type=submit] {
-    width: 100px;
+    width: 150px;
     background-color: #4CAF50;
     color: white;
     margin-right: 5px;
