@@ -1,0 +1,41 @@
+input[type="text"] {
+    width: 300px;
+    outline: none;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    transition: 300ms linear;
+    background-color: #ffe8e8;
+}
+
+input#example1:focus {
+    width: 400px;
+    background-color: #E7FBF8;
+}
+
+input#example2:focus {
+    width: 400px;
+    background-color: #E7FBF8;
+}
+
+input#example3:focus {
+    width: 400px;
+    background-color: #E7FBF8;
+}
+
+input[type=submit] {
+    width: 100px;
+    background-color: #4CAF50;
+    color: white;
+    margin-right: 5px;
+    transition: 300ms linear;
+    outline: none;
+}
+
+.example:hover {
+    background-color: #e0e0e0;
+    color: black;
+}
