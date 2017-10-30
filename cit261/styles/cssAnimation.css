@@ -37,6 +37,7 @@
     width: 60px;
     height: 125px;
     background-color: black;
+    border-radius: 5%;
 }
 
 #redLight {
@@ -57,7 +58,7 @@
     left: 18px;
     top: 25px;
     background-color: black;
-    animation: yellowLight 9.5s;
+    animation: yellowLight 9.5s ease;
     animation-delay: .5s;
 }
 
@@ -69,7 +70,7 @@
     left: 18px;
     top: 40px;
     background-color: black;
-    animation: greenLight 9s;
+    animation: greenLight 9s ease;
     animation-delay: 1s;
 }
 
@@ -89,6 +90,5 @@
 }
 
 #myButtons {
-    margin-right: 5px;
-    padding: 5px;
+    padding-bottom: 5px;
 }
