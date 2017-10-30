@@ -59,7 +59,7 @@
     top: 25px;
     background-color: black;
     animation: yellowLight 9.5s ease;
-    animation-delay: .5s;
+    animation-delay: 100ms;
 }
 
 #greenLight {
@@ -71,7 +71,7 @@
     top: 40px;
     background-color: black;
     animation: greenLight 9s ease;
-    animation-delay: 1s;
+    animation-delay: 700ms;
 }
 
 @keyframes horseRace {
