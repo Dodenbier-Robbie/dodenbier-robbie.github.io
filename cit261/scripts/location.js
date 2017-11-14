@@ -140,6 +140,7 @@ function weatherConditionsJSON(lat, long) {
           var conditions = response.current_observation.weather;
           var temp = response.current_observation.temp_f;
           var icon = response.current_observation.icon;
+          var lastUpdated = response.current_observation.observation_time;
           
         if(currentIcon == "clear") {
               if(currentHour < 19) {
@@ -175,6 +176,7 @@ function weatherConditionsJSON(lat, long) {
           document.getElementById("conditions").innerHTML = conditions;
           document.getElementById("tempDegree").innerHTML = temp + "&deg; F";
           document.getElementById("weatherImage").innerHTML = currentImage;
+          document.getElementById("lastUpdateTime").innerHTML = lastUpdated;
       }
     }
 xhttp.send();   
