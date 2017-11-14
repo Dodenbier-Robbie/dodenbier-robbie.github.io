@@ -76,13 +76,13 @@
 }
 
 
-@keyframes fade{
-  0%{
+@keyframes fade {
+  0% {
     width: 70px;
     height: 70px;
     opacity: 0;
   }
-  100%{
+  100% {
     width: 75px;
     height: 75px;
     opacity: 1;
@@ -90,20 +90,9 @@
 }
 
 @media screen and (max-width: 666px) {
-    html {
-       margin: 0px;
-       height: 100%;
-       width: 100%;
-    }
-
-    body {
-       margin: 0px;
-       min-height: 100%;
-       width: 100%;
-    }
     .col-container {
         top: 50px;
-        left: 0;
+        left: 25px;
         width: 100%;
         display: block;
     }
