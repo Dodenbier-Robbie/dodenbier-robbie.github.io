@@ -6,6 +6,7 @@
     width: 75px;
     height: 75px;
     float: left;
+    animation: fade 3s 0s ease-out;
 }
 
 .fa {
@@ -74,11 +75,29 @@
     left: 60px;
 }
 
+
+@keyframes fade{
+  0%{
+    width: 70px;
+    height: 70px;
+    opacity: 0;
+  }
+  100%{
+    width: 75px;
+    height: 75px;
+    opacity: 1;
+  }
+}
+
 @media screen and (max-width: 666px) {
     .col-container {
         top: 50px;
         left: 0;
         width: 100%;
+        display: block;
+    }
+    
+    .col {
         display: block;
     }
 }
