@@ -75,6 +75,10 @@
     left: 60px;
 }
 
+button {
+    padding-top: 3px;
+}
+
 
 @keyframes fade {
   0% {
