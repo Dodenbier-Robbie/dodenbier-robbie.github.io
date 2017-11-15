@@ -153,7 +153,7 @@ function weatherConditionsJSON(lat, long) {
           document.getElementById("windDirection").innerHTML = windDirection;
           document.getElementById("windSpeed").innerHTML = windSpeed;
           document.getElementById("windDir").innerHTML = "Wind <b>" + windDirection +"</b>";
-          document.getElementById("windGusts").innerHTML = "Gusts: <b>" + windGusts + "mph</b>";
+          document.getElementById("windGusts").innerHTML = "Gusts: <b>" + windGusts + " mph</b>";
           document.getElementById("compass").style = "transform: rotate(" + windDegree + "deg); transition: 1s ease-in-out";
           
           setCurrentImage(currentIcon, lat, long);
