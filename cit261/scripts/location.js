@@ -212,6 +212,8 @@ function setCurrentImage(currentIcon, lat, long) {
               }else {
                   var currentImage = '<img src="https://icons.wxug.com/i/c/v4/27.svg" />'; 
               }
+          }else if(currentIcon == "sleet" || currentIcon == "snow") {
+                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/14.svg" />';           
           }else {
               var currentImage = '<img src="https://icons.wxug.com/i/c/v4/32.svg" />';
           }
