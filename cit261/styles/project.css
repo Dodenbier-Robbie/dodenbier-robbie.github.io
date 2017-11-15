@@ -112,21 +112,21 @@ border-radius: 50%;
 }
 
 #windDirection {
-top: 25px;
-    left: 308px;
+    top: 25px;
+    left: 304px;
     position: absolute;
     display: block;
-    width: 40px;
+    width: 47px;
     text-align: center;
     font-size: 12px;
 }
 
 #windSpeed {
     top: 41px;
-    left: 316px;
+    left: 304px;
     position: absolute;
     display: block;
-    width: 20px;
+    width: 46px;
     text-align: center;
     font-weight: 800;
 }

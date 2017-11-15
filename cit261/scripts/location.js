@@ -134,7 +134,6 @@ function weatherConditionsJSON(lat, long) {
 
           var currentIcon = response.current_observation.icon;
           var currentHigh = response.current_observation.temp_f;
-          var currentHour = getCurrentTime();
           
           var location = response.current_observation.display_location.full;
           var conditions = response.current_observation.weather;
@@ -146,44 +145,15 @@ function weatherConditionsJSON(lat, long) {
           var windDegree = response.current_observation.wind_degrees;
           var windDirection = response.current_observation.wind_dir;
           
-        if(currentIcon == "clear") {
-              if(currentHour < 19) {
-                 var currentImage = '<img src="https://icons.wxug.com/i/c/v4/32.svg" />'; 
-              } else {
-                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/31.svg" />';
-              }
-          } else if(currentIcon == "partlycloudy") {
-              if(currentHour < 19) {
-                 var currentImage = '<img src="https://icons.wxug.com/i/c/v4/30.svg" />'; 
-              } else {
-                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/29.svg" />';
-              }
-          }else if(currentIcon == "cloudy") {
-                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/26.svg" />';
-          }else if(currentIcon == "rain") {
-              if(currentHour < 19) {
-                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/40.svg" />';
-              }else {
-                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/45.svg" />';
-              }
-          }else if(currentIcon == "mostlycloudy") {
-              if(currentHour < 19) {
-                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/28.svg" />'; 
-              }else {
-                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/27.svg" />'; 
-              }
-          }else {
-              var currentImage = '<img src="https://icons.wxug.com/i/c/v4/32.svg" />';
-          }
-          
           document.getElementById("location").innerHTML = location;
           document.getElementById("conditions").innerHTML = conditions;
           document.getElementById("tempDegree").innerHTML = temp + "&deg; F";
-          document.getElementById("weatherImage").innerHTML = currentImage;
           document.getElementById("lastUpdateTime").innerHTML = lastUpdated;
           document.getElementById("windDirection").innerHTML = windDirection;
           document.getElementById("windSpeed").innerHTML = windSpeed;  
-          document.getElementById("compass").style = "transform: rotate(" + windDegree + "deg)";
+          document.getElementById("compass").style = "transform: rotate(" + windDegree + "deg); transition: 1s ease-in-out";
+          
+          setCurrentImage(currentIcon, lat, long);
       }
     }
 xhttp.send();   
@@ -191,5 +161,59 @@ xhttp.send();
 
 function getCurrentTime() {
     var date = new Date();
-    return date.getHours();
+    var hour = date.getHours();
+    var minutes = date.getMinutes();
+    var time = hour + ":" + minutes;
+    return time;
+}
+
+function setCurrentImage(currentIcon, lat, long) {
+    var url = "https://api.wunderground.com/api/971a6113214d3607/astronomy/q/" + lat + "," + long + ".json";
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", url, true);
+    xhttp.onreadystatechange = function() { 
+      if (this.readyState == 4 && this.status == 200) {
+          var response = JSON.parse(this.responseText);
+          var sunSetHour = response.sun_phase.sunset.hour; 
+          var sunSetMinute = response.sun_phase.sunset.minute;
+          var sunSetTime = sunSetHour + ":" + sunSetMinute;
+          var sunRiseHour = response.sun_phase.sunrise.hour; 
+          var sunRiseMinute = response.sun_phase.sunrise.minute;
+          var sunRiseTime = sunRiseHour + ":" + sunRiseMinute;          
+          var currentTime = getCurrentTime();
+
+        if(currentIcon == "clear") {
+              if(currentTime > sunRiseTime && currentHour < sunSetTime) {
+                 var currentImage = '<img src="https://icons.wxug.com/i/c/v4/32.svg" />'; 
+              } else {
+                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/31.svg" />';
+              }
+          } else if(currentIcon == "partlycloudy") {
+              if(currentTime > sunRiseTime && currentHour < sunSetTime) {
+                 var currentImage = '<img src="https://icons.wxug.com/i/c/v4/30.svg" />'; 
+              } else {
+                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/29.svg" />';
+              }
+          }else if(currentIcon == "cloudy") {
+                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/26.svg" />';
+          }else if(currentIcon == "rain") {
+              if(currentTime > sunRiseTime && currentHour < sunSetTime) {
+                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/40.svg" />';
+              }else {
+                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/45.svg" />';
+              }
+          }else if(currentIcon == "mostlycloudy") {
+              if(currentTime > sunRiseTime && currentHour < sunSetTime) {
+                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/28.svg" />'; 
+              }else {
+                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/27.svg" />'; 
+              }
+          }else {
+              var currentImage = '<img src="https://icons.wxug.com/i/c/v4/32.svg" />';
+          }
+
+        document.getElementById("weatherImage").innerHTML = currentImage;
+      }
+    }
+xhttp.send();   
 }
