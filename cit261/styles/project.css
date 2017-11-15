@@ -72,7 +72,7 @@
 
 .currentWeather {
     position: relative;
-    left: 60px;
+    left: 30px;
 }
 
 button {
@@ -157,7 +157,7 @@ top: 25px;
 @media screen and (max-width: 666px) {
     .col-container {
         top: 50px;
-        left: 25px;
+        left: 10px;
         width: 100%;
         display: block;
     }
@@ -167,15 +167,15 @@ top: 25px;
     }
     
     #windDirection {
-        left: 236px;
+        left: 267px;
     }
     
     .compass {
         top: 12px;
-        left: 56%;
+        left: 64%;
     }
     
     #windSpeed {
-        left: 245px;
+        left: 275px;
     }
 }
