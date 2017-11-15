@@ -126,7 +126,7 @@ border-radius: 50%;
     left: 304px;
     position: absolute;
     display: block;
-    width: 46px;
+    width: 47px;
     text-align: center;
     font-weight: 800;
 }
@@ -142,10 +142,10 @@ border-radius: 50%;
 
 #windGusts {
     top: 90px;
-    left: 270px;
+    left: 268px;
     position: absolute;
     display: block;
-    width: 116px;
+    width: 118px;
     text-align: center;
 }
 
