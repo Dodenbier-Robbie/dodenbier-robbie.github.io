@@ -140,7 +140,11 @@ function weatherConditionsJSON(lat, long) {
           var conditions = response.current_observation.weather;
           var temp = response.current_observation.temp_f;
           var icon = response.current_observation.icon;
+          
           var lastUpdated = response.current_observation.observation_time;
+          var windSpeed = response.current_observation.wind_mph;
+          var windDegree = response.current_observation.wind_degrees;
+          var windDirection = response.current_observation.wind_dir;
           
         if(currentIcon == "clear") {
               if(currentHour < 19) {
@@ -177,6 +181,9 @@ function weatherConditionsJSON(lat, long) {
           document.getElementById("tempDegree").innerHTML = temp + "&deg; F";
           document.getElementById("weatherImage").innerHTML = currentImage;
           document.getElementById("lastUpdateTime").innerHTML = lastUpdated;
+          document.getElementById("windDirection").innerHTML = windDirection;
+          document.getElementById("windSpeed").innerHTML = windSpeed;  
+          document.getElementById("compass").style = "transform: rotate(" + windDegree + "deg)";
       }
     }
 xhttp.send();   

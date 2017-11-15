@@ -85,6 +85,52 @@ button {
 }
 
 
+.compass {
+    top: 10px;
+    left: 30%;
+    position: absolute;
+    display: block;
+}
+
+.dial {
+border-radius: 50%;
+    width: 59px;
+    height: 59px;
+    border: 3px solid #818282;
+    position: relative;
+    box-sizing: content-box;
+}
+.arrow {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 18px solid #1E2023;
+    position: absolute;
+    left: 23.5px;
+    top: -10px;
+}
+
+#windDirection {
+top: 25px;
+    left: 308px;
+    position: absolute;
+    display: block;
+    width: 40px;
+    text-align: center;
+    font-size: 12px;
+}
+
+#windSpeed {
+    top: 41px;
+    left: 316px;
+    position: absolute;
+    display: block;
+    width: 20px;
+    text-align: center;
+    font-weight: 800;
+}
+
 @keyframes fade {
     0% {
         width: 60px;
