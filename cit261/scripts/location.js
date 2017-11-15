@@ -144,13 +144,16 @@ function weatherConditionsJSON(lat, long) {
           var windSpeed = response.current_observation.wind_mph;
           var windDegree = response.current_observation.wind_degrees;
           var windDirection = response.current_observation.wind_dir;
+          var windGusts = response.current_observation.wind_gust_mph;
           
           document.getElementById("location").innerHTML = location;
           document.getElementById("conditions").innerHTML = conditions;
           document.getElementById("tempDegree").innerHTML = temp + "&deg; F";
           document.getElementById("lastUpdateTime").innerHTML = lastUpdated;
           document.getElementById("windDirection").innerHTML = windDirection;
-          document.getElementById("windSpeed").innerHTML = windSpeed;  
+          document.getElementById("windSpeed").innerHTML = windSpeed;
+          document.getElementById("windDir").innerHTML = "Wind <b>" + windDirection +"</b>";
+          document.getElementById("windGusts").innerHTML = "Gusts: <b>" + windGusts + "</b>";
           document.getElementById("compass").style = "transform: rotate(" + windDegree + "deg); transition: 1s ease-in-out";
           
           setCurrentImage(currentIcon, lat, long);
