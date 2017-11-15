@@ -142,10 +142,10 @@ border-radius: 50%;
 
 #windGusts {
     top: 90px;
-    left: 282px;
+    left: 272px;
     position: absolute;
     display: block;
-    width: 90px;
+    width: 110px;
     text-align: center;
 }
 
@@ -198,11 +198,11 @@ border-radius: 50%;
     }
     
     #windDir {
-        left: 245px;
+        left: 235px;
     }
     
     #windGusts {
         top: 90px;
-        left: 245px;
+        left: 228px;
     }
 }
