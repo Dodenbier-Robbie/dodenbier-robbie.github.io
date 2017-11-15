@@ -131,6 +131,10 @@ function weatherConditionsJSON(lat, long) {
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
           var response = JSON.parse(this.responseText);
+          
+          var apiImage = response.current_observation.image.url;
+          apiImage = '<img src="' + apiImage + '" />';
+          var secureApiImage = apiImage.replace("http", "https");
 
           var currentIcon = response.current_observation.icon;
           var currentHigh = response.current_observation.temp_f;
@@ -146,6 +150,7 @@ function weatherConditionsJSON(lat, long) {
           var windDirection = response.current_observation.wind_dir;
           var windGusts = response.current_observation.wind_gust_mph;
           
+          document.getElementById("apiImage").innerHTML = secureApiImage;
           document.getElementById("location").innerHTML = location;
           document.getElementById("conditions").innerHTML = conditions;
           document.getElementById("tempDegree").innerHTML = temp + "&deg; F";
@@ -168,6 +173,7 @@ function setCurrentImage(currentIcon, lat, long) {
     xhttp.onreadystatechange = function() { 
       if (this.readyState == 4 && this.status == 200) {
           var response = JSON.parse(this.responseText);
+          
           var sunSetHour = response.sun_phase.sunset.hour; 
           var sunSetMinute = response.sun_phase.sunset.minute;
           var sunSetTime = new Date().setHours(sunSetHour,sunSetMinute);
