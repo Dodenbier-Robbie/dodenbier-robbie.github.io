@@ -165,4 +165,17 @@ top: 25px;
     .col {
         display: block;
     }
+    
+    #windDirection {
+        left: 236px;
+    }
+    
+    .compass {
+        top: 12px;
+        left: 56%;
+    }
+    
+    #windSpeed {
+        left: 245px;
+    }
 }
