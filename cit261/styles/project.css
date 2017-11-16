@@ -101,12 +101,13 @@ border-radius: 50%;
     position: relative;
     box-sizing: content-box;
 }
+
 .arrow {
     width: 0;
     height: 0;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
-    border-top: 18px solid #1E2023;
+    border-top: 18px solid #1590bd;
     position: absolute;
     left: 23.5px;
     top: -10px;
@@ -151,7 +152,7 @@ border-radius: 50%;
 }
 
 #apiInfo {
-    top: 515px;
+    top: 540px;
     font-size: 12px;
     font-style: italic;
     position: absolute;

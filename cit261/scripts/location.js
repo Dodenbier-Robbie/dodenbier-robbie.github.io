@@ -120,6 +120,7 @@ function weatherForecastJSON(lat, long) {
     } else {
         localStorage.setItem("latitude", 40.351456);
         localStorage.setItem("longitude", -111.724213);
+        location.reload();
     }
 xhttp.send();   
 }
