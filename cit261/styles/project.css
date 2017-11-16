@@ -152,11 +152,13 @@ border-radius: 50%;
 }
 
 #apiInfo {
-    top: 540px;
+    top: 223px;
     font-size: 12px;
     font-style: italic;
     position: absolute;
     display: block;
+    width: 225px;
+    left: 0;
 }
 
 #apiImage {
