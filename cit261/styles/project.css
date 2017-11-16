@@ -214,12 +214,12 @@ border-radius: 50%;
     }
     
     #windDir {
-        left: 235px;
+        left: 246px;
     }
     
     #windGusts {
         top: 90px;
-        left: 220px;
+        left: 232px;
     }
     
     #apiInfo {
@@ -229,3 +229,4 @@ border-radius: 50%;
     #conditions {
         padding-left: 10px;
     }
+}
