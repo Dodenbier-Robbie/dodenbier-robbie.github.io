@@ -225,4 +225,7 @@ border-radius: 50%;
     #apiInfo {
         top: 830px;
     }
-}
+    
+    #conditions {
+        padding-left: 10px;
+    }
