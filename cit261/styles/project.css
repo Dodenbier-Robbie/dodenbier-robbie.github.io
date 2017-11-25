@@ -151,22 +151,6 @@ border-radius: 50%;
     text-align: center;
 }
 
-#apiInfo {
-    top: 223px;
-    font-size: 12px;
-    font-style: italic;
-    position: absolute;
-    display: block;
-    width: 225px;
-    left: 0;
-}
-
-#apiImage {
-    top: 15px;
-    position: absolute;
-    display: block;
-}
-
 @keyframes fade {
     0% {
         width: 60px;
@@ -222,10 +206,6 @@ border-radius: 50%;
     #windGusts {
         top: 90px;
         left: 230px;
-    }
-    
-    #apiInfo {
-        top: 830px;
     }
     
     #conditions {
