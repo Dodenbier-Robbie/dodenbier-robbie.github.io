@@ -178,7 +178,7 @@ border-radius: 50%;
 @media screen and (max-width: 666px) {
     .col-container {
         top: 50px;
-        left: 10px;
+        left: -6px;
         width: 100%;
         display: block;
     }
@@ -193,7 +193,7 @@ border-radius: 50%;
     
     .compass {
         top: 1px;
-        left: 65%;
+        left: 95%;
     }
     
     #windSpeed {
