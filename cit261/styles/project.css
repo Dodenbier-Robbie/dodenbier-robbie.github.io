@@ -211,5 +211,10 @@ border-radius: 50%;
     
     #conditions {
         padding-left: 10px;
+        font-size: 1.2em;
+    }
+    
+    .currentWeather {
+        left: 0px;
     }
 }
