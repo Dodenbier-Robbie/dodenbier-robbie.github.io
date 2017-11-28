@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="styles/main.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="styles/project.css">
+        <link rel="stylesheet" href="styles/popupBox.css">
         <script type="text/javascript" src="scripts/location.js"></script>
     </head>
     <body onload="weatherForecastJSON()">
@@ -62,5 +63,19 @@
                 <div id="tomorrowText"></div>
             </div>
         </div>
+        <div id="overlay"></div>
+        <div id="popup">
+            <div class="popupcontrols">
+                <span id="popupclose">&times;</span>
+            </div>
+            <div class="popupcontent">
+                <div class="titleContent">
+                    <h2>Welcome</h2>
+                </div>
+            </div>
+            <div class="mainContent">
+                <p>Some Content to display</p>
+            </div>
+        </div>       
     </body>
 </html>

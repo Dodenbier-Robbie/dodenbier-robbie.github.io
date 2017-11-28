@@ -215,7 +215,23 @@ function setCurrentImage(currentIcon, lat, long) {
           }
 
         document.getElementById("weatherImage").innerHTML = currentImage;
+          
+        welcomePopUp();
       }
     }
 xhttp.send();   
+}
+
+function welcomePopUp() {
+    var closePopup = document.getElementById("popupclose");
+    var overlay = document.getElementById("overlay");
+    var popup = document.getElementById("popup");
+    
+    overlay.className = "show";
+    popup.className = "show";
+    
+    closePopup.onclick = function() {
+        overlay.className = "";
+        popup.className = "";
+    }
 }
