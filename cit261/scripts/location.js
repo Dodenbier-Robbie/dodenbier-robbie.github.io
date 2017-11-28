@@ -1,11 +1,5 @@
 function geoFindMe() {
     var output = document.getElementById("message");
-    var closePopup = document.getElementById("popupclose");
-    var overlay = document.getElementById("overlay");
-    var popup = document.getElementById("popup");
-    
-    overlay.className = "";
-    popup.className = "";
 
     if (!navigator.geolocation){
         output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
@@ -29,6 +23,7 @@ function geoFindMe() {
     output.innerHTML = "<p>" + refreshIcon + " Locating…</p>";
     
     navigator.geolocation.getCurrentPosition(success, error);
+    closePopUp();
     
     return;
 }
@@ -231,4 +226,13 @@ function welcomePopUp() {
     
     overlay.className = "show";
     popup.className = "show";
+}
+
+function closePopUp() {
+    var closePopup = document.getElementById("popupclose");
+    var overlay = document.getElementById("overlay");
+    var popup = document.getElementById("popup");
+    
+    overlay.className = "";
+    popup.className = "";    
 }
