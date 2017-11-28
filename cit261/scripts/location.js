@@ -1,5 +1,11 @@
 function geoFindMe() {
     var output = document.getElementById("message");
+    var closePopup = document.getElementById("popupclose");
+    var overlay = document.getElementById("overlay");
+    var popup = document.getElementById("popup");
+    
+    overlay.className = "";
+    popup.className = "";
 
     if (!navigator.geolocation){
         output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
@@ -118,9 +124,7 @@ function weatherForecastJSON(lat, long) {
           }
         }
     } else {
-        localStorage.setItem("latitude", 40.351456);
-        localStorage.setItem("longitude", -111.724213);
-        location.reload();
+            welcomePopUp()
     }
 xhttp.send();   
 }
@@ -215,8 +219,6 @@ function setCurrentImage(currentIcon, lat, long) {
           }
 
         document.getElementById("weatherImage").innerHTML = currentImage;
-          
-        welcomePopUp();
       }
     }
 xhttp.send();   

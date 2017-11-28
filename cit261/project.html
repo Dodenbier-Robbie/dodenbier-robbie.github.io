@@ -17,7 +17,7 @@
         <h2>Current Weather Conditions</h2>
         <p>
             Zip code: <input type="number" name="zip_code" id="zipCode"><button onclick="weatherGeoJSON()">Submit</button>
-            <span onclick="geoFindMe()"><i class="fa fa-location-arrow" aria-hidden="true"></i></span>
+            <span onclick="geoFindMe()"><i class="fa fa-location-arrow" aria-hidden="true" id="faLocation"></i></span>
         </p>
         <div id="message"></div>
         <div id="lastUpdateTime"></div>
@@ -74,7 +74,8 @@
                 </div>
             </div>
             <div class="mainContent">
-                <p>Some Content to display</p>
+                <p>No current location has been set. Please click the button below to set your location.</p>
+                <span onclick="geoFindMe()"><i class="fa fa-compass" aria-hidden="true" id="faCompass"></i></span>
             </div>
         </div>       
     </body>

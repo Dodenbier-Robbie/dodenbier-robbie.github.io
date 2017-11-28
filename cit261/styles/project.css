@@ -15,6 +15,18 @@
     color: #1590bd;
 }
 
+#faLocation {
+    padding-left: 5px;
+    font-size: 20px;
+    color: #1590bd;
+}
+
+#faCompass {
+    padding-left: 115px;
+    font-size: 50px;
+    color: #1590bd;
+}
+
 #location {
     font-size: 3rem;
     font-weight: 700;

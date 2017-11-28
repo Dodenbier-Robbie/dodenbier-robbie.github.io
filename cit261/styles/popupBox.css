@@ -58,3 +58,7 @@
     color: white;
     padding-left: 10px;
 }
+
+.mainContent p {
+    padding: 10px;
+}
