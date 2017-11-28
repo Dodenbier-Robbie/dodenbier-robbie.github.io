@@ -220,7 +220,6 @@ xhttp.send();
 }
 
 function welcomePopUp() {
-    var closePopup = document.getElementById("popupclose");
     var overlay = document.getElementById("overlay");
     var popup = document.getElementById("popup");
     
@@ -229,7 +228,6 @@ function welcomePopUp() {
 }
 
 function closePopUp() {
-    var closePopup = document.getElementById("popupclose");
     var overlay = document.getElementById("overlay");
     var popup = document.getElementById("popup");
     
