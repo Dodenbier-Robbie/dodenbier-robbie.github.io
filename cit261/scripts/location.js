@@ -231,9 +231,4 @@ function welcomePopUp() {
     
     overlay.className = "show";
     popup.className = "show";
-    
-    closePopup.onclick = function() {
-        overlay.className = "";
-        popup.className = "";
-    }
 }

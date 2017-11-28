@@ -56,9 +56,14 @@
 .titleContent h2 {
     text-align: center;
     color: white;
-    padding-left: 10px;
 }
 
 .mainContent p {
     padding: 10px;
+}
+
+#faCompass {
+    padding-left: 115px;
+    font-size: 50px;
+    color: #1590bd;
 }
