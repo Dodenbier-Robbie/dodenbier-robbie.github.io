@@ -187,7 +187,7 @@ function setCurrentImage(currentIcon, lat, long) {
               } else {
                   var currentImage = '<img src="https://icons.wxug.com/i/c/v4/31.svg" />';
               }
-          } else if(currentIcon == "partlycloudy") {
+          } else if(currentIcon == "partlycloudy" || currentIcon == "fog") {
               if(currentTime > sunRiseTime && currentTime < sunSetTime) {
                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/30.svg" />'; 
               } else {
