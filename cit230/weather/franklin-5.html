@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>Franklin Weather</title>
+        <meta name="description" content="Franklin local weather page">
+        <meta name="viewport" content="width=device-width, inital-scale=1">
+        <link rel="stylesheet" href="styles/normalize.css">
+        <link rel="stylesheet" media="(max-width: 735px)" href="styles/main-5.css">
+        <link rel="stylesheet" media="(min-width: 736px)" href="styles/medium-5.css">
+        <link rel="stylesheet" media="(min-width: 1440px)" href="styles/large-5.css">
+    </head>
+    <body>
+        <header>
+            <h1>Tri-Metro Weather</h1>
+            <p id="subHeaderText">The place to find your local weather forecast</p>
+        </header>
+        <nav>
+            <ul class="clearfix">
+                <li><a href="#">HOME</a></li>
+                <li><a class="active" href="#">FRANKLIN</a></li>
+                <li><a href="#">GREENVILLE</a></li>
+                <li><a href="#">SPRINGFIELD</a></li>
+                <li><a href="#">STORM CENTER</a></li>
+                <li><a href="#">GALLERY</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div class="mainForecast">
+                <table>
+                    <tr>
+                        <th colspan="2">Franklin Weather</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Summary</strong></td>
+                        <td id="summary">Sunny</td>
+                    </tr>
+                    <tr>
+                        <td><strong>High</strong></td>
+                        <td id="high">90&deg;F</td>                    
+                    </tr>
+                    <tr>
+                        <td><strong>Low</strong></td>
+                        <td id="low">66&deg;F</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Chance Precipitation</strong></td>
+                        <td id="precipitation">0%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Max Wind</strong></td>
+                        <td id='wind'>5 mph SW</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="tenDayForecast">
+                 <table>
+                    <tr>
+                        <th colspan="10">10 Day Forecast</th>
+                    </tr>
+                    <tr id="day">
+                        <td>Day 1</td>
+                        <td>Day 2</td>
+                        <td>Day 3</td>
+                        <td>Day 4</td>
+                        <td>Day 5</td>
+                        <td>Day 6</td>
+                        <td>Day 7</td>
+                        <td>Day 8</td>
+                        <td>Day 9</td>
+                        <td>Day 10</td>
+                    </tr>
+                    <tr>
+                        <td>89&deg;F</td>
+                        <td>87&deg;F</td>
+                        <td>78&deg;F</td>
+                        <td>75&deg;F</td>
+                        <td>72&deg;F</td>
+                        <td>72&deg;F</td>
+                        <td>79&deg;F</td>
+                        <td>83&deg;F</td>
+                        <td>85&deg;F</td>
+                        <td>89&deg;F</td>
+                    </tr>
+                </table>
+            </div>
+        </main>
+        <footer>
+            Tri-Metro Weather | 300 West Avenue | Some Town, CA | 555-555-555<br>
+            Copyright &copy;2017 | <a href="#">Terms of Use</a> | Current Date
+        </footer>
+    </body>
