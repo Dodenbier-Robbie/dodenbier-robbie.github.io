@@ -9,6 +9,12 @@
     animation: fade 1s 0s ease-out;
 }
 
+.zipCode {
+    font-size: 10px;
+    font-style: italic;
+    padding-left: 36px;   
+}
+
 .fa {
     padding-left: 5px;
     font-size: 20px;
