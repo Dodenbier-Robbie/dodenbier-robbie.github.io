@@ -15,6 +15,14 @@
     padding-left: 36px;   
 }
 
+#dayHigh, #day2High, #day3High {
+    color: #ff3300;
+}
+
+#dayLow, #day2Low, #day3Low {
+    color: #0000cc;
+}
+
 .fa {
     padding-left: 5px;
     font-size: 20px;
