@@ -23,8 +23,8 @@ function geoFindMe() {
         output.innerHTML = "Unable to retrieve your location";
     }
     
-    var refreshIcon = '<i class="fa fa-spinner fa-spin"></i>';
-    output.innerHTML = "<p>" + refreshIcon + " Locating…</p>";
+    var refreshIcon = '<i class="fas fa-sync fa-spin"></i>';
+    output.innerHTML = "<p>" + refreshIcon + "&nbsp;&nbsp;&nbsp;Locating…</p>";
     
     navigator.geolocation.getCurrentPosition(success, error);
     closePopUp();
@@ -33,7 +33,7 @@ function geoFindMe() {
 
 function weatherGeoJSON() {
     var zipCode = document.getElementById("zipCode").value;
-    var url = apiURL + "current.json?" + "key=" + apiKey + "&q=" + zipCode + "&days=1";
+    var url = apiURL + "current.json?" + "key=" + apiKey + "&q=" + zipCode;
     var zip = document.getElementById("zipCode");
     zip.value = "";
     var xhttp = new XMLHttpRequest();
