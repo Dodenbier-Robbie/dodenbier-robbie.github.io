@@ -1,5 +1,5 @@
 var apiKey = '5a3006d99cf04027968174854192403';
-var apiURL = 'http://api.apixu.com/v1/'
+var apiURL = 'https://api.apixu.com/v1/'
 var forecastDays = 3;
 
 function geoFindMe() {
