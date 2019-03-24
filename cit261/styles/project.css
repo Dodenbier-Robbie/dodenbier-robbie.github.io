@@ -23,7 +23,7 @@
     color: #0000cc;
 }
 
-#dayDate {
+#dayDate, #day2Date, #day3Date {
     font-weight: 900;
 }
 
