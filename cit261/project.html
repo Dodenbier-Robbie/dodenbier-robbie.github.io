@@ -17,8 +17,9 @@
     <body onload="weatherForecastJSON()">
         <h2>Current Weather Conditions</h2>
         <p>
-            Zip code: <input type="number" name="zip_code" id="zipCode"><button onclick="weatherGeoJSON()">Submit</button>
+            City: <input type="text" name="zip_code" id="zipCode"><button onclick="weatherGeoJSON()">Submit</button>
             <span onclick="geoFindMe()"><i class="fa fa-location-arrow" aria-hidden="true" id="faLocation"></i></span>
+            <br><span class="zipCode">Enter City Name or Zip Code</span>
         </p>
         <div id="message"></div>
         <div id="lastUpdateTime"></div>
@@ -44,24 +45,24 @@
         <div class="col-container">
             <div class="col">
                 <div id="dayImage"></div>
-                <div id="dayDay"></div>
                 <div id="dayDate"></div>
                 <div id="dayHigh"></div>
+                <div id="dayLow"></div>
                 <div id="dayText"></div>
             </div>
             <div class="col" style="background: #e4e3e4">
-                <div id="nightImage"></div>
-                <div id="nightDay"></div>
-                <div id="nightDate"></div>
-                <div id="nightLow"></div>
-                <div id="nightText"></div>
+                <div id="day2Image"></div>
+                <div id="day2Date"></div>
+                <div id="day2High"></div>
+                <div id="day2Low"></div>
+                <div id="day2Text"></div>
             </div>
             <div class="col">
-                <div id="tomorrowImage"></div>
-                <div id="tomorrowDay"></div>
-                <div id="tomorrowDate"></div>
-                <div id="tomorrowHigh"></div>
-                <div id="tomorrowText"></div>
+                <div id="day3Image"></div>
+                <div id="day3Date"></div>
+                <div id="day3High"></div>
+                <div id="day3Low"></div>
+                <div id="day3Text"></div>
             </div>
         </div>
         <div id="overlay"></div>
