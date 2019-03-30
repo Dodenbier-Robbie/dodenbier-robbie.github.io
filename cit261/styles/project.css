@@ -15,15 +15,15 @@
     padding-left: 36px;   
 }
 
-#dayHigh, #day2High, #day3High {
+.dayHigh {
     color: #ff3300;
 }
 
-#dayLow, #day2Low, #day3Low {
+.dayLow {
     color: #0000cc;
 }
 
-#dayDate, #day2Date, #day3Date {
+.dayDate {
     font-weight: 900;
 }
 
@@ -77,20 +77,21 @@
     float: left;
 }
 
-.col-container {
+#col-container {
     position: relative;
     text-align: center;
     top: 60px;
-    left: -165px;
-    width: 75%;
+    left: -28px;
+    width: 100%;
     background-color: #F7F7F7;
-    float: left;
     font-size: .875rem;
-    display: table;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
 }
 
 .col {
-    display: table-cell;
+    width: 300px;
     padding: 10px;
 }
 
@@ -200,15 +201,16 @@ border-radius: 50%;
 }
 
 @media screen and (min-width: 321px) and (max-width: 666px) {
-    .col-container {
+    #col-container {
         top: 50px;
         left: -6px;
         width: 103%;
-        display: block;
+        display: flex;
+        flex-direction: column;
     }
     
     .col {
-        display: block;
+        width: 100%;
     }
     
     #windDirection {
@@ -244,15 +246,16 @@ border-radius: 50%;
 }
 
 @media screen and (max-width: 320px) {
-    .col-container {
+    #col-container {
         top: 50px;
         left: -6px;
         width: 104%;
-        display: block;
+        display: flex;
+        flex-direction: column;
     }
     
     .col {
-        display: block;
+        width: 100%;
     }
     
     #windDirection {
