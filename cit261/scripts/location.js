@@ -1,6 +1,5 @@
 var apiKey = '5a3006d99cf04027968174854192403';
 var apiURL = 'https://api.apixu.com/v1/'
-var forecastDays = 3;
 
 function geoFindMe() {
     var output = document.getElementById("message");
@@ -16,7 +15,7 @@ function geoFindMe() {
             localStorage.setItem("latitude", latitude);
             localStorage.setItem("longitude", longitude);
             output.innerHTML = "";
-            weatherForecastJSON(latitude, longitude);
+            currentWeatherJSON(latitude, longitude);
         }
 
     function error() {
@@ -45,13 +44,13 @@ function weatherGeoJSON() {
           var long = response.location.lon;
           localStorage.setItem("latitude", lat);
           localStorage.setItem("longitude", long);
-          weatherForecastJSON(lat, long);
+          currentWeatherJSON(lat, long);
       }
     }
 xhttp.send();   
 }
 
-function weatherForecastJSON(lat, long) {
+function currentWeatherJSON(lat, long) {
     
     if(localStorage.latitude && localStorage.longitude) {
         if(localStorage.getItem("latitude") != lat) {
@@ -60,7 +59,8 @@ function weatherForecastJSON(lat, long) {
         if(localStorage.getItem("longitude") != long) {
             long = localStorage.getItem("longitude");
         }
-        var url = apiURL + "forecast.json?key=" + apiKey + "&q=" + lat + "," + long + "&days=" + forecastDays;
+        
+        var url = apiURL + "current.json?key=" + apiKey + "&q=" + lat + "," + long;
         var xhttp = new XMLHttpRequest();
         xhttp.open("GET", url, true);
         xhttp.onreadystatechange = function() {
@@ -78,86 +78,10 @@ function weatherForecastJSON(lat, long) {
               var currentImage = '<img src="https://' + currentWeatherImage + '"/>';
               var temp = response.current.temp_f;
 
-              var dayHigh = response.forecast.forecastday[0].day.maxtemp_f;
-              var dayLow = response.forecast.forecastday[0].day.mintemp_f;
-
               var windSpeed = response.current.wind_mph;
               var windDegree = response.current.wind_degree;
               var windDirection = response.current.wind_dir;
               var windGusts = response.current.gust_mph;
-
-              var dayWeatherImage = response.forecast.forecastday[0].day.condition.icon;
-              dayWeatherImage = dayWeatherImage.substr(2);
-              var dayImage = '<img src="https://' + dayWeatherImage + '"/>';
-              var dayDay = response.forecast.forecastday[0].date;
-              var dayText = response.forecast.forecastday[0].day.condition.text;
-
-              var day2WeatherImage = response.forecast.forecastday[1].day.condition.icon;
-              day2WeatherImage = dayWeatherImage.substr(2);
-              var day2Image = '<img src="https://' + dayWeatherImage + '"/>';
-              var day2Day = response.forecast.forecastday[1].date;
-              var day2Text = response.forecast.forecastday[1].day.condition.text;
-              var day2High = response.forecast.forecastday[1].day.maxtemp_f;
-              var day2Low = response.forecast.forecastday[1].day.mintemp_f;
-
-              var day3WeatherImage = response.forecast.forecastday[2].day.condition.icon;
-              day3WeatherImage = dayWeatherImage.substr(2);
-              var day3Image = '<img src="https://' + dayWeatherImage + '"/>';
-              var day3Day = response.forecast.forecastday[2].date;
-              var day3Text = response.forecast.forecastday[2].day.condition.text;
-              var day3High = response.forecast.forecastday[2].day.maxtemp_f;
-              var day3Low = response.forecast.forecastday[2].day.mintemp_f;
-              
-              /*var dayImage = response.forecast.txt_forecast.forecastday[0].icon_url;
-              dayImage = '<img src="' + dayImage + '" />';
-              var secureDayImage = dayImage.replace("http", "https");
-              var dayDayName = response.forecast.txt_forecast.forecastday[0].title;
-              var dayText = response.forecast.txt_forecast.forecastday[0].fcttext;
-              var dayCondition = response.forecast.simpleforecast.forecastday[0].conditions;
-              var dayMonth = response.forecast.simpleforecast.forecastday[0].date.month;
-              var dayDay = response.forecast.simpleforecast.forecastday[0].date.day;
-              var dayHigh = response.forecast.simpleforecast.forecastday[0].high.fahrenheit;
-              
-              var nightImage = response.forecast.txt_forecast.forecastday[1].icon_url;
-              nightImage = '<img src="' + nightImage + '" />';
-              var secureNightImage = nightImage.replace("http", "https");
-              var nightDayName = response.forecast.txt_forecast.forecastday[1].title;
-              var nightText = response.forecast.txt_forecast.forecastday[1].fcttext;
-              var nightConditions = response.forecast.simpleforecast.forecastday[0].conditions;
-              var nightMonth = response.forecast.simpleforecast.forecastday[0].date.month;
-              var nightDay = response.forecast.simpleforecast.forecastday[0].date.day;
-              var nightLow = response.forecast.simpleforecast.forecastday[0].low.fahrenheit;
-              
-              var tomorrowImage = response.forecast.txt_forecast.forecastday[2].icon_url;
-              tomorrowImage = '<img src="' + tomorrowImage + '" />';
-              var secureTomorrowImage = tomorrowImage.replace("http", "https");
-              var tomorrowDayName = response.forecast.txt_forecast.forecastday[2].title;
-              var tomorrowText = response.forecast.txt_forecast.forecastday[2].fcttext;
-              var tomorrowConditions = response.forecast.simpleforecast.forecastday[1].conditions;
-              var tomorrowMonth = response.forecast.simpleforecast.forecastday[1].date.month;
-              var tomorrowDay = response.forecast.simpleforecast.forecastday[1].date.day;
-              var tomorrowHigh = response.forecast.simpleforecast.forecastday[1].high.fahrenheit;
-              var tomorrowLow = response.forecast.simpleforecast.forecastday[1].low.fahrenheit;
-
-              document.getElementById("dayImage").innerHTML = secureDayImage;
-              document.getElementById("dayDay").innerHTML = dayDayName;
-              document.getElementById("dayText").innerHTML = dayText;
-              document.getElementById("dayDate").innerHTML = dayMonth + "/" + dayDay;
-              document.getElementById("dailyLow").innerHTML = nightLow + "&deg; F";
-              document.getElementById("dayHigh").innerHTML = "HIGH<b> " + dayHigh + "</b>&deg; F";
-              document.getElementById("dailyHigh").innerHTML = dayHigh + "&deg; F | ";
-              
-              document.getElementById("nightImage").innerHTML = secureNightImage;
-              document.getElementById("nightDay").innerHTML = nightDayName;
-              document.getElementById("nightText").innerHTML = nightText;
-              document.getElementById("nightDate").innerHTML = nightMonth + "/" + nightDay;
-              document.getElementById("nightLow").innerHTML = "LOW<b> " + nightLow + "</b>&deg; F";
-              
-              document.getElementById("tomorrowImage").innerHTML = secureTomorrowImage;
-              document.getElementById("tomorrowDay").innerHTML = tomorrowDayName;
-              document.getElementById("tomorrowText").innerHTML = tomorrowText;
-              document.getElementById("tomorrowDate").innerHTML = tomorrowMonth + "/" + tomorrowDay;
-              document.getElementById("tomorrowHigh").innerHTML = "HIGH<b>  " + tomorrowHigh + "</b> | " + tomorrowLow + "&deg; F";*/
 
               document.getElementById("location").innerHTML = location + ", " + state;
               document.getElementById("lastUpdateTime").innerHTML = "Last updated: " + lastUpdated;
@@ -165,31 +89,11 @@ function weatherForecastJSON(lat, long) {
               document.getElementById("weatherImage").innerHTML =  currentImage;
               document.getElementById("tempDegree").innerHTML = temp + "&deg; F";
 
-              document.getElementById("dailyHigh").innerHTML = dayHigh + "&deg; F | ";
-              document.getElementById("dailyLow").innerHTML = dayLow + "&deg; F";
-
               document.getElementById("windSpeed").innerHTML = windSpeed;
               document.getElementById("windDir").innerHTML = "Wind <b>" + windDirection +"</b>";
               document.getElementById("windGusts").innerHTML = "Gusts: <b>" + windGusts + " mph</b>";
               document.getElementById("compass").style = "transform: rotate(" + windDegree + "deg); transition: 1s ease-in-out";
-
-              document.getElementById("dayImage").innerHTML = dayImage;
-              document.getElementById("dayDate").innerHTML = dayDay;
-              document.getElementById("dayHigh").innerHTML = "HIGH<b> " + dayHigh + "</b>&deg; F";
-              document.getElementById("dayLow").innerHTML = "LOW<b> " + dayLow + "</b>&deg; F";
-              document.getElementById("dayText").innerHTML = dayText;
-
-              document.getElementById("day2Image").innerHTML = day2Image;
-              document.getElementById("day2Date").innerHTML = day2Day;
-              document.getElementById("day2High").innerHTML = "HIGH<b> " + day2High + "</b>&deg; F";
-              document.getElementById("day2Low").innerHTML = "LOW<b> " + day2Low + "</b>&deg; F";
-              document.getElementById("day2Text").innerHTML = day2Text;
-
-              document.getElementById("day3Image").innerHTML = day3Image;
-              document.getElementById("day3Date").innerHTML = day3Day;
-              document.getElementById("day3High").innerHTML = "HIGH<b> " + day3High + "</b>&deg; F";
-              document.getElementById("day3Low").innerHTML = "LOW<b> " + day3Low + "</b>&deg; F";
-              document.getElementById("day3Text").innerHTML = day3Text;
+              forecastWeatherJSON(lat, long);
           }
         }
     } else {
@@ -198,96 +102,74 @@ function weatherForecastJSON(lat, long) {
 xhttp.send();   
 }
 
-function weatherConditionsJSON(lat, long) {
-    var url = "https://api.wunderground.com/api/971a6113214d3607/conditions/q/" + lat + "," + long + ".json";
-    var xhttp = new XMLHttpRequest();
+function forecastWeatherJSON(lat, long) {
+  if(localStorage.getItem("forecastdays") != forecastDays) {
+    forecastDays = localStorage.getItem("forecastdays");
+  }
+  var forecastDays = document.getElementById("forecastDays").value;
+  localStorage.setItem("forecastdays", forecastDays);
+  var url = apiURL + "forecast.json?key=" + apiKey + "&q=" + lat + "," + long + "&days=" + forecastDays;
+  var xhttp = new XMLHttpRequest();
     xhttp.open("GET", url, true);
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-          var response = JSON.parse(this.responseText);
+        var response = JSON.parse(this.responseText);
+        var currentHigh = response.forecast.forecastday[0].day.maxtemp_f;
+        var currentLow = response.forecast.forecastday[0].day.mintemp_f;
+        document.getElementById("dailyHigh").innerHTML = currentHigh + "&deg; F | ";
+        document.getElementById("dailyLow").innerHTML = currentLow + "&deg; F";
 
-          var currentIcon = response.current_observation.icon;
-          var currentHigh = response.current_observation.temp_f;
-          
-          var location = response.current_observation.display_location.full;
-          var conditions = response.current_observation.weather;
-          var temp = response.current_observation.temp_f;
-          var icon = response.current_observation.icon;
-          
-          var lastUpdated = response.current_observation.observation_time;
-          var windSpeed = response.current_observation.wind_mph;
-          var windDegree = response.current_observation.wind_degrees;
-          var windDirection = response.current_observation.wind_dir;
-          var windGusts = response.current_observation.wind_gust_mph;
-          
-          document.getElementById("location").innerHTML = location;
-          document.getElementById("conditions").innerHTML = conditions;
-          document.getElementById("tempDegree").innerHTML = temp + "&deg; F";
-          document.getElementById("lastUpdateTime").innerHTML = lastUpdated;
-          document.getElementById("windSpeed").innerHTML = windSpeed;
-          document.getElementById("windDir").innerHTML = "Wind <b>" + windDirection +"</b>";
-          document.getElementById("windGusts").innerHTML = "Gusts: <b>" + windGusts + " mph</b>";
-          document.getElementById("compass").style = "transform: rotate(" + windDegree + "deg); transition: 1s ease-in-out";
-          
-          setCurrentImage(currentIcon, lat, long);
-      }
-    }
-xhttp.send();   
-}
+        var columnNode = document.getElementById("col-container");
+        columnNode.textContent = "";
 
-function setCurrentImage(currentIcon, lat, long) {
-    var url = "https://api.wunderground.com/api/971a6113214d3607/astronomy/q/" + lat + "," + long + ".json";
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", url, true);
-    xhttp.onreadystatechange = function() { 
-      if (this.readyState == 4 && this.status == 200) {
-          var response = JSON.parse(this.responseText);
-          
-          var sunSetHour = response.sun_phase.sunset.hour; 
-          var sunSetMinute = response.sun_phase.sunset.minute;
-          var sunSetTime = new Date().setHours(sunSetHour,sunSetMinute);
-          
-          var sunRiseHour = response.sun_phase.sunrise.hour; 
-          var sunRiseMinute = response.sun_phase.sunrise.minute;
-          var sunRiseTime = new Date().setHours(sunRiseHour, sunRiseMinute); 
-          
-          var currentHour = response.moon_phase.current_time.hour;
-          var currentMinute = response.moon_phase.current_time.minute;
-          var currentTime = new Date().setHours(currentHour, currentMinute);
+        for(var i = 0; i < forecastDays ; i++) {
+          var dayWeatherImage = response.forecast.forecastday[i].day.condition.icon;
+          var dayWeatherImage = response.forecast.forecastday[i].day.condition.icon;
+          dayWeatherImage = dayWeatherImage.substr(2);
+          var dayImage = '<img src="https://' + dayWeatherImage + '"/>';
+          var dayDay = response.forecast.forecastday[i].date;
+          var dayText = response.forecast.forecastday[i].day.condition.text;
+          var dayHigh = response.forecast.forecastday[i].day.maxtemp_f;
+          var dayLow = response.forecast.forecastday[i].day.mintemp_f;
 
-        if(currentIcon == "clear") {
-              if(currentTime > sunRiseTime && currentTime < sunSetTime) {
-                 var currentImage = '<img src="https://icons.wxug.com/i/c/v4/32.svg" />'; 
-              } else {
-                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/31.svg" />';
-              }
-          } else if(currentIcon == "partlycloudy" || currentIcon == "fog") {
-              if(currentTime > sunRiseTime && currentTime < sunSetTime) {
-                 var currentImage = '<img src="https://icons.wxug.com/i/c/v4/30.svg" />'; 
-              } else {
-                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/29.svg" />';
-              }
-          }else if(currentIcon == "cloudy") {
-                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/26.svg" />';
-          }else if(currentIcon == "rain") {
-              if(currentTime > sunRiseTime && currentTime < sunSetTime) {
-                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/40.svg" />';
-              }else {
-                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/45.svg" />';
-              }
-          }else if(currentIcon == "mostlycloudy") {
-              if(currentTime > sunRiseTime && currentTime < sunSetTime) {
-                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/28.svg" />'; 
-              }else {
-                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/27.svg" />'; 
-              }
-          }else if(currentIcon == "sleet" || currentIcon == "snow") {
-                  var currentImage = '<img src="https://icons.wxug.com/i/c/v4/14.svg" />';           
-          }else {
-              var currentImage = '<img src="https://icons.wxug.com/i/c/v4/32.svg" />';
+          var divNode = document.createElement("DIV");
+          divNode.classList.add("col");
+          divNode.setAttribute("id", "col_"+i);
+          var divImage = document.createElement("DIV");
+          divImage.setAttribute("id", "dayImage_"+i);
+          divImage.classList.add("dayImage");
+          var divDay = document.createElement("DIV");
+          divDay.classList.add("dayDate");
+          divDay.setAttribute("id", "dayDate_"+i);
+          var divHigh = document.createElement("DIV");
+          divHigh.classList.add("dayHigh");
+          divHigh.setAttribute("id", "dayHigh_"+i);
+          var divLow = document.createElement("DIV");
+          divLow.classList.add("dayLow");
+          divLow.setAttribute("id", "dayLow_"+i);
+          var divText = document.createElement("DIV");
+          divText.classList.add("dayText");
+          divText.setAttribute("id", "dayText_"+i);
+
+          columnNode.appendChild(divNode);
+          divNode.appendChild(divImage);
+          divNode.appendChild(divDay);
+          divNode.appendChild(divHigh);
+          divNode.appendChild(divLow);
+          divNode.appendChild(divText);
+
+          var x = i % 2;
+
+          if (x > 0) {
+            divNode.setAttribute("style", "background-color: #e4e3e4;");
           }
 
-        document.getElementById("weatherImage").innerHTML = currentImage;
+          document.getElementById("dayImage_"+i).innerHTML = dayImage;
+          document.getElementById("dayDate_"+i).innerHTML = dayDay;
+          document.getElementById("dayHigh_"+i).innerHTML = "HIGH<b> " + dayHigh + "</b>&deg; F";
+          document.getElementById("dayLow_"+i).innerHTML = "LOW<b> " + dayLow + "</b>&deg; F";
+          document.getElementById("dayText_"+i).innerHTML = dayText;
+        }
       }
     }
 xhttp.send();   
