@@ -14,10 +14,18 @@
         <link rel="stylesheet" href="styles/popupBox.css">
         <script type="text/javascript" src="scripts/location.js"></script>
     </head>
-    <body onload="weatherForecastJSON()">
+    <body onload="currentWeatherJSON()">
         <h2>Current Weather Conditions</h2>
         <p>
-            City: <input type="text" name="zip_code" id="zipCode"><button onclick="weatherGeoJSON()">Submit</button>
+            City: <input type="text" name="zip_code" id="zipCode">
+            <select name="forecastDays" id="forecastDays">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <button onclick="weatherGeoJSON()">Submit</button>
             <span onclick="geoFindMe()"><i class="fas fa-map-marker-alt"></i></span>
             <br><span class="zipCode">Enter City Name or Zip Code</span>
         </p>
@@ -42,28 +50,7 @@
             <div id="windDir"></div>
             <div id="windGusts"></div>
         </div>
-        <div class="col-container">
-            <div class="col">
-                <div id="dayImage"></div>
-                <div id="dayDate"></div>
-                <div id="dayHigh"></div>
-                <div id="dayLow"></div>
-                <div id="dayText"></div>
-            </div>
-            <div class="col" style="background: #e4e3e4">
-                <div id="day2Image"></div>
-                <div id="day2Date"></div>
-                <div id="day2High"></div>
-                <div id="day2Low"></div>
-                <div id="day2Text"></div>
-            </div>
-            <div class="col">
-                <div id="day3Image"></div>
-                <div id="day3Date"></div>
-                <div id="day3High"></div>
-                <div id="day3Low"></div>
-                <div id="day3Text"></div>
-            </div>
+        <div id="col-container">
         </div>
         <div id="overlay"></div>
         <div id="popup">
