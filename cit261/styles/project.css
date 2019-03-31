@@ -51,12 +51,15 @@
     font-size: 1.5em;
     font-weight: 600;
     float: left;
+    max-width: 270px;
+    text-align: center;
 }
 
 #tempDegree {
     font-size: 3.5em;
     padding-top: 40px;
-    padding-left: 90px;
+    padding-left: 85px;
+    max-width: 270px;
 }
 
 #day {
