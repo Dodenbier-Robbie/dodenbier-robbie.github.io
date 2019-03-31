@@ -77,6 +77,7 @@ function currentWeatherJSON(lat, long) {
               currentWeatherImage = currentWeatherImage.substr(2);
               var currentImage = '<img src="https://' + currentWeatherImage + '"/>';
               var temp = response.current.temp_f;
+              temp = Math.round(temp);
 
               var windSpeed = response.current.wind_mph;
               var windDegree = response.current.wind_degree;
@@ -141,7 +142,9 @@ function forecastWeatherJSON(lat, long) {
           var dayDay = response.forecast.forecastday[i].date;
           var dayText = response.forecast.forecastday[i].day.condition.text;
           var dayHigh = response.forecast.forecastday[i].day.maxtemp_f;
+          dayHigh = Math.round(dayHigh);
           var dayLow = response.forecast.forecastday[i].day.mintemp_f;
+          dayLow = Math.round(dayLow);
 
           var divNode = document.createElement("DIV");
           divNode.classList.add("col");
