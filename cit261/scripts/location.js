@@ -84,7 +84,12 @@ function currentWeatherJSON(lat, long) {
               var windDirection = response.current.wind_dir;
               var windGusts = response.current.gust_mph;
 
-              document.getElementById("location").innerHTML = location + ", " + state;
+              if(country == 'United States of America') {
+                document.getElementById("location").innerHTML = location + ", " + state;
+              } else {
+                document.getElementById("location").innerHTML = location + ", " + country;
+              }
+              
               document.getElementById("lastUpdateTime").innerHTML = "Last updated: " + lastUpdated;
               document.getElementById("conditions").innerHTML = conditions;
               document.getElementById("weatherImage").innerHTML =  currentImage;
