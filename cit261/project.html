@@ -18,7 +18,7 @@
         <h2>Current Weather Conditions</h2>
         <p>
             City: <input type="text" name="zip_code" id="zipCode">
-            <select name="forecastDays" id="forecastDays">
+            <select name="forecastDays" id="forecastDays" onchange="forecastWeatherJSON()">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3" selected>3</option>
@@ -36,8 +36,6 @@
             <div id="weatherImage"></div>
             <div id="conditions"></div>
             <div id="tempDegree"></div>
-            <div id="dailyHigh"></div>
-            <div id="dailyLow"></div>
             <div class="compass-wrap">
                 <div class="compass" id="compass">
                     <div class="dial">
