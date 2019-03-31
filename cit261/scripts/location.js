@@ -93,6 +93,14 @@ function currentWeatherJSON(lat, long) {
               document.getElementById("windDir").innerHTML = "Wind <b>" + windDirection +"</b>";
               document.getElementById("windGusts").innerHTML = "Gusts: <b>" + windGusts + " mph</b>";
               document.getElementById("compass").style = "transform: rotate(" + windDegree + "deg); transition: 1s ease-in-out";
+
+              var currentTempColor = document.getElementById("tempDegree")
+
+              if(temp > 50) {
+                currentTempColor.setAttribute("style", "color: #ff3300;");
+              } else {
+                currentTempColor.setAttribute("style", "color: #0000cc;");
+              }
               forecastWeatherJSON(lat, long);
           }
         }
@@ -103,9 +111,17 @@ xhttp.send();
 }
 
 function forecastWeatherJSON(lat, long) {
+  if(localStorage.latitude && localStorage.longitude) {
+    if(localStorage.getItem("latitude") != lat) {
+        lat = localStorage.getItem("latitude");
+    }
+    if(localStorage.getItem("longitude") != long) {
+        long = localStorage.getItem("longitude");
+    }
   if(localStorage.getItem("forecastdays") != forecastDays) {
     forecastDays = localStorage.getItem("forecastdays");
   }
+}
   var forecastDays = document.getElementById("forecastDays").value;
   localStorage.setItem("forecastdays", forecastDays);
   var url = apiURL + "forecast.json?key=" + apiKey + "&q=" + lat + "," + long + "&days=" + forecastDays;
@@ -114,11 +130,6 @@ function forecastWeatherJSON(lat, long) {
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         var response = JSON.parse(this.responseText);
-        var currentHigh = response.forecast.forecastday[0].day.maxtemp_f;
-        var currentLow = response.forecast.forecastday[0].day.mintemp_f;
-        document.getElementById("dailyHigh").innerHTML = currentHigh + "&deg; F | ";
-        document.getElementById("dailyLow").innerHTML = currentLow + "&deg; F";
-
         var columnNode = document.getElementById("col-container");
         columnNode.textContent = "";
 
