@@ -150,10 +150,34 @@ function forecastWeatherJSON(lat, long) {
           dayHigh = Math.round(dayHigh);
           var dayLow = response.forecast.forecastday[i].day.mintemp_f;
           dayLow = Math.round(dayLow);
+          var epoch = response.forecast.forecastday[i].date_epoch;
+          var d = new Date(epoch * 1000);
+          var dayOfWeek = (d.getDay() + 1) ;
+          var forecastDayOfWeek = '';
+
+          if (dayOfWeek == 0 | dayOfWeek == 7) {
+            forecastDayOfWeek = 'Sunday';
+          } else if (dayOfWeek == 1) {
+            forecastDayOfWeek = 'Monday';
+          } else if (dayOfWeek == 2) {
+            forecastDayOfWeek = 'Tuesday';
+          } else if (dayOfWeek == 3) {
+            forecastDayOfWeek = 'Wednesday'
+          } else if (dayOfWeek == 4) {
+            forecastDayOfWeek = 'Thursday';
+          } else if (dayOfWeek == 5) {
+            forecastDayOfWeek = 'Friday';
+          } else {
+            forecastDayOfWeek = 'Saturday';
+          }
+
 
           var divNode = document.createElement("DIV");
           divNode.classList.add("col");
           divNode.setAttribute("id", "col_"+i);
+          var divDayWeek = document.createElement("DIV");
+          divDayWeek.classList.add("dayDayWeek");
+          divDayWeek.setAttribute("id", "dayDayWeek_"+i);           
           var divImage = document.createElement("DIV");
           divImage.classList.add("dayImage");
           divImage.setAttribute("id", "dayImage_"+i);          
@@ -171,6 +195,7 @@ function forecastWeatherJSON(lat, long) {
           divText.setAttribute("id", "dayText_"+i);
 
           columnNode.appendChild(divNode);
+          divNode.appendChild(divDayWeek);
           divNode.appendChild(divImage);
           divNode.appendChild(divDay);
           divNode.appendChild(divHigh);
@@ -183,6 +208,7 @@ function forecastWeatherJSON(lat, long) {
             divNode.setAttribute("style", "background-color: #e4e3e4;");
           }
 
+          document.getElementById("dayDayWeek_"+i).innerHTML = forecastDayOfWeek;
           document.getElementById("dayImage_"+i).innerHTML = dayImage;
           document.getElementById("dayDate_"+i).innerHTML = dayDay;
           document.getElementById("dayHigh_"+i).innerHTML = "HIGH<b> " + dayHigh + "</b>&deg; F";
