@@ -155,8 +155,8 @@ function forecastWeatherJSON(lat, long) {
           divNode.classList.add("col");
           divNode.setAttribute("id", "col_"+i);
           var divImage = document.createElement("DIV");
-          divImage.setAttribute("id", "dayImage_"+i);
           divImage.classList.add("dayImage");
+          divImage.setAttribute("id", "dayImage_"+i);          
           var divDay = document.createElement("DIV");
           divDay.classList.add("dayDate");
           divDay.setAttribute("id", "dayDate_"+i);
