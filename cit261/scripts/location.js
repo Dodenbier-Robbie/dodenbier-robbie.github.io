@@ -102,7 +102,7 @@ function currentWeatherJSON(lat, long) {
 
               var currentTempColor = document.getElementById("tempDegree")
 
-              if(temp > 50) {
+              if(temp >= 70) {
                 currentTempColor.setAttribute("style", "color: #ff3300;");
               } else {
                 currentTempColor.setAttribute("style", "color: #0000cc;");
