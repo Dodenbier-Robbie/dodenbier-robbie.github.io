@@ -1,5 +1,6 @@
 var apiKey = '634f38f0a9de4d8327307cbff756a04c';
-var apiURL = 'http://api.weatherstack.com/'
+var apiURL = 'http://api.weatherstack.com/';
+var units = 'f';
 
 function geoFindMe() {
     var output = document.getElementById("message");
@@ -32,7 +33,7 @@ function geoFindMe() {
 
 function weatherGeoJSON() {
     var zipCode = document.getElementById("zipCode").value;
-    var url = apiURL + "current?" + "access_key=" + apiKey + "&query=" + zipCode;
+    var url = apiURL + "current?" + "access_key=" + apiKey + "&query=" + zipCode + "&units=" + units;
     var zip = document.getElementById("zipCode");
     zip.value = "";
     var xhttp = new XMLHttpRequest();
@@ -60,7 +61,7 @@ function currentWeatherJSON(lat, long) {
             long = localStorage.getItem("longitude");
         }
         
-        var url = apiURL + "current?access_key=" + apiKey + "&query=" + lat + "," + long;
+        var url = apiURL + "current?access_key=" + apiKey + "&query=" + lat + "," + long + "&units=" + units;
         var xhttp = new XMLHttpRequest();
         xhttp.open("GET", url, true);
         xhttp.onreadystatechange = function() {
@@ -70,19 +71,19 @@ function currentWeatherJSON(lat, long) {
               var location = response.location.name;
               var state = response.location.region;
               var country = response.location.country;
-              var lastUpdated = response.current.last_updated;
+              var lastUpdated = response.location.localtime;
 
-              var conditions = response.current.condition.text;
-              var currentWeatherImage = response.current.condition.icon;
-              currentWeatherImage = currentWeatherImage.substr(2);
-              var currentImage = '<img src="https://' + currentWeatherImage + '"/>';
-              var temp = response.current.temp_f;
-              temp = Math.round(temp);
+              var conditions = response.current.weather_descriptions[0];
+              var currentWeatherImage = response.current.weather_icons[0];
+              //currentWeatherImage = currentWeatherImage[0];
+              var currentImage = '<img src="' + currentWeatherImage + '"/>';
+              var temp = response.current.temperature;
+              //temp = Math.round(temp);
 
-              var windSpeed = response.current.wind_mph;
+              var windSpeed = response.current.wind_speed;
               var windDegree = response.current.wind_degree;
               var windDirection = response.current.wind_dir;
-              var windGusts = response.current.gust_mph;
+              //var windGusts = response.current.gust_mph;
 
               if(country == 'United States of America') {
                 document.getElementById("location").innerHTML = location + ", " + state;
@@ -97,7 +98,7 @@ function currentWeatherJSON(lat, long) {
 
               document.getElementById("windSpeed").innerHTML = windSpeed;
               document.getElementById("windDir").innerHTML = "Wind <b>" + windDirection +"</b>";
-              document.getElementById("windGusts").innerHTML = "Gusts: <b>" + windGusts + " mph</b>";
+              //document.getElementById("windGusts").innerHTML = "Gusts: <b>" + windGusts + " mph</b>";
               document.getElementById("compass").style = "transform: rotate(" + windDegree + "deg); transition: 1s ease-in-out";
 
               var currentTempColor = document.getElementById("tempDegree")
@@ -130,7 +131,7 @@ function forecastWeatherJSON(lat, long) {
 }
   var forecastDays = document.getElementById("forecastDays").value;
   localStorage.setItem("forecastdays", forecastDays);
-  var url = apiURL + "forecast?access_key=" + apiKey + "&query=" + lat + "," + long + "&days=" + forecastDays;
+  var url = apiURL + "forecast?access_key=" + apiKey + "&query=" + lat + "," + long + "&days=" + forecastDays + "&units=" + units;
   var xhttp = new XMLHttpRequest();
     xhttp.open("GET", url, true);
     xhttp.onreadystatechange = function() {
