@@ -37,6 +37,7 @@ function weatherGeoJSON() {
     zip.value = "";
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET", url, true);
+    xhttp.setRequestHeader("Access-Control-Allow-Origin", "https://api.weatherapi.com");
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
           var response = JSON.parse(this.responseText);
@@ -63,6 +64,7 @@ function currentWeatherJSON(lat, long) {
         var url = apiURL + "current.json?key=" + apiKey + "&q=" + lat + "," + long;
         var xhttp = new XMLHttpRequest();
         xhttp.open("GET", url, true);
+        xhttp.setRequestHeader("Access-Control-Allow-Origin", "https://api.weatherapi.com");
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
               var response = JSON.parse(this.responseText);
@@ -74,12 +76,12 @@ function currentWeatherJSON(lat, long) {
 
               var conditions = response.current.condition.text;
               var currentWeatherImage = response.current.condition.icon;
-              currentWeatherImage = currentWeatherImage[2];
-              var currentImage = '<img src="' + currentWeatherImage + '"/>';
+              currentWeatherImage = currentWeatherImage.substr(2);
+              var currentImage = '<img src="https://' + currentWeatherImage + '"/>';
               var temp = response.current.temp_f;
               temp = Math.round(temp);
 
-              var windSpeed = response.current.wind_speed;
+              var windSpeed = response.current.wind_mph;
               var windDegree = response.current.wind_degree;
               var windDirection = response.current.wind_dir;
               var windGusts = response.current.gust_mph;
@@ -133,6 +135,7 @@ function forecastWeatherJSON(lat, long) {
   var url = apiURL + "forecast.json?key=" + apiKey + "&q=" + lat + "," + long + "&days=" + forecastDays;
   var xhttp = new XMLHttpRequest();
     xhttp.open("GET", url, true);
+    xhttp.setRequestHeader("Access-Control-Allow-Origin", "https://api.weatherapi.com");
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         var response = JSON.parse(this.responseText);
