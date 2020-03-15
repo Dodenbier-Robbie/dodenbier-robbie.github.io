@@ -1,5 +1,5 @@
-var apiKey = '5a3006d99cf04027968174854192403';
-var apiURL = 'https://api.apixu.com/v1/'
+var apiKey = '634f38f0a9de4d8327307cbff756a04c';
+var apiURL = 'http://api.weatherstack.com/'
 
 function geoFindMe() {
     var output = document.getElementById("message");
