@@ -32,7 +32,7 @@ function geoFindMe() {
 
 function weatherGeoJSON() {
     var zipCode = document.getElementById("zipCode").value;
-    var url = apiURL + "current.json?" + "access_key=" + apiKey + "&query=" + zipCode;
+    var url = apiURL + "current?" + "access_key=" + apiKey + "&query=" + zipCode;
     var zip = document.getElementById("zipCode");
     zip.value = "";
     var xhttp = new XMLHttpRequest();
@@ -60,7 +60,7 @@ function currentWeatherJSON(lat, long) {
             long = localStorage.getItem("longitude");
         }
         
-        var url = apiURL + "current.json?access_key=" + apiKey + "&query=" + lat + "," + long;
+        var url = apiURL + "current?access_key=" + apiKey + "&query=" + lat + "," + long;
         var xhttp = new XMLHttpRequest();
         xhttp.open("GET", url, true);
         xhttp.onreadystatechange = function() {
@@ -130,7 +130,7 @@ function forecastWeatherJSON(lat, long) {
 }
   var forecastDays = document.getElementById("forecastDays").value;
   localStorage.setItem("forecastdays", forecastDays);
-  var url = apiURL + "forecast.json?access_key=" + apiKey + "&query=" + lat + "," + long + "&days=" + forecastDays;
+  var url = apiURL + "forecast?access_key=" + apiKey + "&query=" + lat + "," + long + "&days=" + forecastDays;
   var xhttp = new XMLHttpRequest();
     xhttp.open("GET", url, true);
     xhttp.onreadystatechange = function() {
