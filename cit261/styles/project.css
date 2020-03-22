@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+.sponsorContent {
+    padding-top: 60px;
+}
+
 #weatherImage img {
     width: 75px;
     height: 75px;
@@ -251,6 +255,9 @@ border-radius: 50%;
     .currentWeather {
         left: 0px;
     }
+    .sponsorContent {
+    padding-left: 10px;
+    }
 }
 
 @media screen and (max-width: 320px) {
@@ -295,5 +302,8 @@ border-radius: 50%;
     
     .currentWeather {
         left: 0px;
+    }
+    .sponsorContent {
+    padding-left: 10px;
     }
 }
