@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <title>NBA Sport Scores</title>
+        <meta name="description" content="Just messing around while locked up in quarantine">
+        <meta name="viewport" content="width=device-width, inital-scale=1">
+        <link rel="stylesheet" href="styles/normalize.css">
+        <link rel="stylesheet" href="styles/sports.css">
+        <script src="https://kit.fontawesome.com/b3e2fd778c.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="scripts/head2head.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="header">
+            <ul>
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="games.html">GAMES</a></li>
+                <li><a class="active" href="head2head.html">HEAD TO HEAD</a></li>
+                <li><a href="standings.html">STANDINGS</a></li>
+                <li><a href="stats.html">TEAM STATS</a></li>
+            </ul>
+        </div>
+        <div id="pageTitle">Head To Head</div>
+        <div id="teamLogo"></div>
+        <div id="input-container">
+            <select name="teamName1" id="teamName1">
+                <option value="0" selected>Select Your Team</option>
+                <option value="132">Atlanta Hawks</option>
+                <option value="133">Boston Celtics</option>
+                <option value="134">Brooklyn Nets</option>
+                <option value="135">Charlotte Hornets</option>
+                <option value="136">Chicago Bulls</option>
+                <option value="137">Cleveland Cavaliers</option>
+                <option value="138">Dallas Mavericks</option>
+                <option value="139">Denver Nuggets</option>
+                <option value="140">Detroit Pistons</option>
+                <option value="141">Golden State Warriors</option>
+                <option value="142">Houston Rockets</option>
+                <option value="143">Indiana Pacers</option>
+                <option value="144">Los Angeles Clippers</option>
+                <option value="145">Los Angeles Lakers</option>
+                <option value="146">Memphis Grizzlies</option>
+                <option value="147">Miami Heat</option>
+                <option value="148">Milwaukee Bucks</option>
+                <option value="149">Minnesota Timberwolves</option>
+                <option value="150">New Orleans Pelicans</option>
+                <option value="151">New York Knicks</option>
+                <option value="152">Oklahoma City Thunder</option>
+                <option value="153">Orlando Magic</option>
+                <option value="154">Philadelphia 76ers</option>
+                <option value="155">Phoenix Suns</option>
+                <option value="156">Portland Trail Blazers</option>
+                <option value="157">Sacramento Kings</option>
+                <option value="158">San Antonio Spurs</option>
+                <option value="159">Toronto Raptors</option>
+                <option value="160">Utah Jazz</option>
+                <option value="161">Washington Wizards</option>
+            </select> VS
+            <select name="teamName2" id="teamName2">
+                <option value="0" selected>Select Your Team</option>
+                <option value="132">Atlanta Hawks</option>
+                <option value="133">Boston Celtics</option>
+                <option value="134">Brooklyn Nets</option>
+                <option value="135">Charlotte Hornets</option>
+                <option value="136">Chicago Bulls</option>
+                <option value="137">Cleveland Cavaliers</option>
+                <option value="138">Dallas Mavericks</option>
+                <option value="139">Denver Nuggets</option>
+                <option value="140">Detroit Pistons</option>
+                <option value="141">Golden State Warriors</option>
+                <option value="142">Houston Rockets</option>
+                <option value="143">Indiana Pacers</option>
+                <option value="144">Los Angeles Clippers</option>
+                <option value="145">Los Angeles Lakers</option>
+                <option value="146">Memphis Grizzlies</option>
+                <option value="147">Miami Heat</option>
+                <option value="148">Milwaukee Bucks</option>
+                <option value="149">Minnesota Timberwolves</option>
+                <option value="150">New Orleans Pelicans</option>
+                <option value="151">New York Knicks</option>
+                <option value="152">Oklahoma City Thunder</option>
+                <option value="153">Orlando Magic</option>
+                <option value="154">Philadelphia 76ers</option>
+                <option value="155">Phoenix Suns</option>
+                <option value="156">Portland Trail Blazers</option>
+                <option value="157">Sacramento Kings</option>
+                <option value="158">San Antonio Spurs</option>
+                <option value="159">Toronto Raptors</option>
+                <option value="160">Utah Jazz</option>
+                <option value="161">Washington Wizards</option>
+            </select>
+            <select name="seasonSelect" id="seasonSelect">
+                <option value="0" selected>Select Your Season</option>
+                <option value="2015-2016">2015-2016</option>
+                <option value="2016-2017">2016-2017</option>
+                <option value="2017-2018">2017-2018</option>
+                <option value="2018-2019">2018-2019</option>
+                <option value="2019-2020">2019-2020</option>
+            </select>
+            <button onclick="loadPage()">Submit</button>
+        </div>
+        <div id="errorMessage"></div>
+        <div id="table-container"></div>
+    </body>
+</html>
