@@ -1,0 +1,126 @@
+body {
+    margin: auto;
+}
+
+#pageTitle {
+    text-align: center;
+    font-weight: 900;
+    font-size: 40px;
+    padding: 30px 0;
+}
+
+#input-container {
+	padding: 0 0 20px 150px;
+}
+
+table {
+	width: 100%;
+    border: 1px solid grey;
+    border-collapse: collapse;
+    box-shadow: 10px 10px 10px rgb(98,140,166);
+    
+}
+
+thead, tfoot {
+    background-color: #7fb9c2;
+}
+
+thead {
+    font-size: 1.25rem;
+}
+
+tfoot {
+    font-size: .75rem;
+    text-align: center;
+}
+
+td, th {
+    text-align: center;
+    border: 1px solid grey;
+    padding: 10px;
+}
+
+#headerRow, #headerRow2 {
+	font-weight: 900;
+	font-size: 20px;
+	background-color: #FFCC00;
+    color: white;
+}
+
+#table-container {
+	padding: 0 150px;
+}
+
+tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+tr:nth-child(even) {
+    background-color: #f0faff;
+}
+
+form {
+    margin: 0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    max-width: 93%;
+}
+
+fieldset {
+    border-radius: .5em;
+}
+
+label {
+    display: block;
+    margin: .5em;
+    font-size: .8em;
+}
+
+label span {
+    display: block;
+    padding-top: .5em;
+    padding-bottom: .2em;
+}
+
+#teamLogo img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #17408B;
+}
+
+.header li {
+  float: left;
+}
+
+.header li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 30px 50px;
+  text-decoration: none;
+}
+
+.header li a:hover {
+  background-color: #FFCC00;
+}
+
+.active {
+  background-color: #FFCC00;
+}
+
+#table1, #table2 {
+    padding: 5px 0 50px 0;
+}
+
+#row2, #row4 {
+    font-weight: 900;
+}
