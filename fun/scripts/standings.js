@@ -25,7 +25,7 @@ function getStandings(teamId) {
 				var conference = apiResponse.response[0][i].group.name;
 				var teamLogoId = apiResponse.response[0][i].team.id;
 				var teamName = apiResponse.response[0][i].team.name;
-				var logo = "../HTML/images/nba/" + teamLogoId +".png";
+				var logo = "images/nba/" + teamLogoId +".png";
 				var teamLogoUrl = document.createElement("IMG");
 				teamLogoUrl.setAttribute("src", logo);
 				teamLogoUrl.setAttribute("width", "30");
@@ -246,3 +246,4 @@ function loadPage(){
 	var teamId = document.getElementById("teamName").value;
 	getStandings(teamId);
 }
+

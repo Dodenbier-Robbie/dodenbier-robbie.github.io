@@ -5,7 +5,7 @@ function getStats(season,teamId) {
 	var url = "";
 	if (teamId > 0 && season != 0) {
 		url = apiURL + "/statistics?league=12&season=" + season + "&team=" + teamId;
-		var logo = "../HTML/images/nba/" + teamId +".png";
+		var logo = "images/nba/" + teamId +".png";
 		var teamLogoUrl = document.createElement("IMG");
 		teamLogoUrl.setAttribute("src", logo);
 		teamLogoUrl.setAttribute("width", "100px");
